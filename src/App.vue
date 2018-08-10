@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div class="b-con">
+      <i-head></i-head>
       <router-view/>
       <div class="push"></div>
     </div>
@@ -10,11 +11,13 @@
 
 <script>
   import IFooter from '@/base/iFooter'
+  import IHead from '@/base/iHead'
 
   export default {
     name: 'App',
     components: {
-      IFooter
+      IFooter,
+      IHead
     }
   }
 </script>
@@ -42,6 +45,8 @@
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100%;
+    box-sizing: border-box;
+    padding-top: 20px;
   }
   #app .b-con .push{
     height: 270px;
