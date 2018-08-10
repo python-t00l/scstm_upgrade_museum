@@ -7,6 +7,7 @@
       <ul class="menu-list clearfix">
         <li v-for="(item,index) in menu" :key="index">
           <router-link :to="item.link ? item.link : ''">{{item.title}}</router-link>
+          <span class="up-triangle"></span>
         </li>
       </ul>
     </div>
@@ -126,39 +127,47 @@
     }
     .menu {
       width: 100%;
-      padding: 8px 0;
+      padding-top: 8px;
       background: #20a6fc;
       box-sizing: border-box;
       .menu-list{
         padding: 0 10px;
         li{
           float: left;
-          font-size: 16px;
-          color: #fff;
-          padding: 6px 22px;
-          margin: 0 4px;
           cursor: pointer;
-          transition: all .4s;
-          &.active{
-            background: #fff;
-            -webkit-border-radius: 2px;
-            -moz-border-radius: 2px;
-            border-radius: 2px;
-            a{
-              color: #20A6FC;
-            }
-          }
-          &:hover{
-            background: #fff;
-            -webkit-border-radius: 2px;
-            -moz-border-radius: 2px;
-            border-radius: 2px;
-            a{
-              color: #20A6FC;
-            }
-          }
+          position: relative;
+          margin: 0 4px;
           a{
+            font-size: 16px;
             color: #fff;
+            padding: 6px 22px;
+            transition: all .4s;
+            display: block;
+            &.active{
+              background: #fff;
+              -webkit-border-radius: 2px;
+              -moz-border-radius: 2px;
+              border-radius: 2px;
+              color: #20A6FC;
+            }
+            &:hover{
+              background: #fff;
+              -webkit-border-radius: 2px;
+              -moz-border-radius: 2px;
+              border-radius: 2px;
+              color: #20A6FC;
+            }
+          }
+          .up-triangle{
+            width:0;
+            height:0;
+            border-width:0 4px 4px;
+            border-style:solid;
+            border-color:transparent transparent #fff;/*透明 透明  灰*/
+            margin:2px auto;
+            border-radius: 2px;
+            display: block;
+            opacity: 0;
           }
         }
       }
