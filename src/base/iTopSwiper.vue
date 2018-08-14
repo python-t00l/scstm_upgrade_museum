@@ -1,6 +1,6 @@
 <template>
   <div class="top-swiper">
-    <swiper :options="options">
+    <swiper :options="swiperOption">
       <swiper-slide>
         <a target="_blank" href="#" class="bg-img"
            style="background: url('./static/img/test/surmon-1.jpg') no-repeat center"></a>
@@ -30,7 +30,7 @@
     },
     data() {
       return {
-        options: {
+        swiperOption: {
           centeredSlides: true,
           speed: 400,
           loop: true,
@@ -40,7 +40,7 @@
           },
           pagination: {
             el: '.swiper-pagination',
-            clickable: true
+            clickable: true,
           }
         }
       }
