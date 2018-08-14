@@ -269,18 +269,27 @@
       </div>
       <i-article-swiper></i-article-swiper>
     </div>
+    <!--POPULAR SCIENCE WINDOW-->
+    <div class="window">
+      <div class="banner">
+        <img src="../assets/banner3.jpg"/>
+      </div>
+      <i-science-swiper></i-science-swiper>
+    </div>
   </div>
 </template>
 
 <script>
   import ITopSwiper from '@/base/iTopSwiper'
   import IArticleSwiper from '@/base/iArticleSwiper'
+  import IScienceSwiper from '@/base/iScienceSwiper'
 
   export default {
     name: "index",
     components:{
       ITopSwiper,
-      IArticleSwiper
+      IArticleSwiper,
+      IScienceSwiper
     },
     data() {
       return {

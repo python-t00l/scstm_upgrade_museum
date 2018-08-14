@@ -110,7 +110,7 @@
 <style lang="less">
   .article {
     box-sizing: border-box;
-    padding: 40px;
+    margin: 40px 40px 0 40px;
     .banner-img {
       width: 360px;
       height: 450px;
