@@ -267,17 +267,20 @@
       <div class="banner">
         <img src="../assets/banner2.jpg"/>
       </div>
+      <i-article-swiper></i-article-swiper>
     </div>
   </div>
 </template>
 
 <script>
   import ITopSwiper from '@/base/iTopSwiper'
+  import IArticleSwiper from '@/base/iArticleSwiper'
 
   export default {
     name: "index",
     components:{
-      ITopSwiper
+      ITopSwiper,
+      IArticleSwiper
     },
     data() {
       return {

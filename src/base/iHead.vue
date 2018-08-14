@@ -235,6 +235,7 @@
             padding: 0 10px;
             background: #fff;
             min-width: 160px;
+            z-index: 100;
             li {
               border-bottom: 1px dotted #d1d1d1;
               padding: 5px 0;
