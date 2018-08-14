@@ -2,7 +2,7 @@
   <div class="con">
     <!--首页—顶部轮播、通知公告-->
     <div class="floor-one clearfix">
-      <div class="swiper"></div>
+      <i-top-swiper></i-top-swiper>
       <div class="notice-box">
         <div class="title clearfix">
           <p>
@@ -96,8 +96,8 @@
         <div class="title clearfix">
           <p>
             <img class="ico" src="../assets/party.png"/>
-            <span class="ch">协会动态</span>
-            <span class="en">ASSOCIATION DYNAMICS</span>
+            <span class="ch">协会党建</span>
+            <span class="en">CULTURE OF PARTY BUILDING</span>
           </p>
           <router-link to=""> 更多></router-link>
         </div>
@@ -272,10 +272,17 @@
 </template>
 
 <script>
+  import ITopSwiper from '@/base/iTopSwiper'
+
   export default {
     name: "index",
+    components:{
+      ITopSwiper
+    },
     data() {
-      return {}
+      return {
+
+      }
     }
   }
 </script>
@@ -321,12 +328,6 @@
       }
     }
     .floor-one {
-      .swiper {
-        width: 820px;
-        height: 424px;
-        background: #333;
-        float: left;
-      }
       .notice-box {
         float: right;
         width: 320px;
