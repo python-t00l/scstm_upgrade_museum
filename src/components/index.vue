@@ -1,5 +1,5 @@
 <template>
-  <div class="con">
+  <div class="home">
     <!--首页—顶部轮播、通知公告-->
     <div class="floor-one clearfix">
       <i-top-swiper :data="middleInfo.cycle ? middleInfo.cycle : []"></i-top-swiper>
@@ -209,12 +209,7 @@
 </script>
 
 <style scoped lang="less">
-  .con {
-    width: 1200px;
-    margin: 20px auto;
-    box-sizing: border-box;
-    padding: 20px;
-    background: #fff;
+  .home {
     .title {
       padding-bottom: 14px;
       border-bottom: 1px solid #eee;

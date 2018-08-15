@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <div class="b-con">
-      <i-head :logo="logoFooterInfo.logo ? logoFooterInfo.logo : ''"></i-head>
-      <router-view/>
+      <i-head :pathname="pathname" :logo="logoFooterInfo.logo ? logoFooterInfo.logo : ''"></i-head>
+      <div class="con">
+        <router-view/>
+      </div>
       <div class="push"></div>
     </div>
     <i-footer :data="logoFooterInfo ? logoFooterInfo : {}"></i-footer>
@@ -22,7 +24,8 @@
     },
     data() {
       return {
-        logoFooterInfo: {}
+        logoFooterInfo: {},
+        pathname:''
       }
     },
     created() {
@@ -37,6 +40,12 @@
       _getLogoFooterInfo: async function () {
         let result = await getLogoFooterInfo()
         this.logoFooterInfo = result.msg
+      }
+    },
+    watch: {
+      "$route"(to, from) {
+        this.pathname = to.meta[0]
+        document.title = to.name + ' - 四川省自然科学博物馆协会'
       }
     }
   }
@@ -57,6 +66,13 @@
     -moz-osx-font-smoothing: grayscale;
     background: #eefaff;
     height: 100%;
+  }
+  .con{
+    width: 1200px;
+    margin: 20px auto;
+    box-sizing: border-box;
+    padding: 20px;
+    background: #fff;
   }
 
   #app .b-con {

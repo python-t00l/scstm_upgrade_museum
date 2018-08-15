@@ -45,7 +45,11 @@
       logo: {
         type: String,
         default: ''
-      }
+      },
+      pathname: {
+        type: String,
+        default: ''
+      },
     },
     data() {
       return {
@@ -80,16 +84,13 @@
             title: '首页',
             isSub: false,
             isShow: false,
-            link: ''
+            link: '/'
           },
           {
             title: '协会介绍',
-            isSub: true,
+            isSub: false,
             isShow: false,
-            items: [
-              {title: '协会简介', isShow: false, isSub: false, link: ''},
-              {title: '协会章程', isShow: false, isSub: false, link: ''}
-            ]
+            link:'/introduce'
           },
           {
             title: '协会党建',
