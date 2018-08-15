@@ -1,1 +1,1 @@
-export const serveUrl = "";
+export const serveUrl = "http://www.bwg.com";

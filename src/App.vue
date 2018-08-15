@@ -1,34 +1,56 @@
 <template>
   <div id="app">
     <div class="b-con">
-      <i-head></i-head>
+      <i-head :logo="logoFooterInfo.logo ? logoFooterInfo.logo : ''"></i-head>
       <router-view/>
       <div class="push"></div>
     </div>
-    <i-footer></i-footer>
+    <i-footer :data="logoFooterInfo ? logoFooterInfo : {}"></i-footer>
   </div>
 </template>
 
 <script>
   import IFooter from '@/base/iFooter'
   import IHead from '@/base/iHead'
+  import {getLogoFooterInfo} from '@/public/js/api'
 
   export default {
     name: 'App',
     components: {
       IFooter,
       IHead
+    },
+    data() {
+      return {
+        logoFooterInfo: {}
+      }
+    },
+    created() {
+      this._getLogoFooterInfo()
+    },
+    methods: {
+      /**
+       * 获取logo和底部数据
+       * @returns {Promise<void>}
+       * @private
+       */
+      _getLogoFooterInfo: async function () {
+        let result = await getLogoFooterInfo()
+        this.logoFooterInfo = result.msg
+      }
     }
   }
 </script>
 
 <style>
   @import "./public/css/base.css";
-  html, body{
+
+  html, body {
     height: 100%;
     margin: 0;
     min-width: 1200px;
   }
+
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -48,7 +70,8 @@
     box-sizing: border-box;
     padding-top: 20px;
   }
-  #app .b-con .push{
+
+  #app .b-con .push {
     height: 270px;
   }
 </style>

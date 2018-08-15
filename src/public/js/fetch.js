@@ -13,7 +13,7 @@ export function post(url, params) {
   _this.$http.defaults.headers.common['Authorization'] = 'Bearer ' + sessionStorage.getItem('token');
   return _this.$http({
     method: 'post',
-    url: serveUrl + '/' + url,
+    url: serveUrl + url,
     data: qs.stringify(params)
   }).then((res) => {
     return Promise.resolve(res.data)

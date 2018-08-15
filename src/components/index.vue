@@ -2,7 +2,7 @@
   <div class="con">
     <!--首页—顶部轮播、通知公告-->
     <div class="floor-one clearfix">
-      <i-top-swiper></i-top-swiper>
+      <i-top-swiper :data="middleInfo.cycle ? middleInfo.cycle : []"></i-top-swiper>
       <div class="notice-box">
         <div class="title clearfix">
           <p>
@@ -14,26 +14,17 @@
         <div class="notice-list">
           <div class="thumbnail">
             <router-link to="">
-              <img src="../assets/test/test1.png"/>
-              <p class="mask">开展音信十三人起步走活动</p>
+              <img :src="middleInfo.notice && middleInfo.notice[0].img"/>
+              <p class="mask">{{middleInfo.notice && middleInfo.notice[0].title}}</p>
             </router-link>
           </div>
           <ul class="list">
-            <li>
+            <li
+              v-for="(item,index) in middleInfo.notice"
+              v-if="index!==0"
+              :key="index">
               <span class="right-blue-triangle"></span>
-              <router-link to="">关于科博场馆建设与发展的几点建议</router-link>
-            </li>
-            <li>
-              <span class="right-blue-triangle"></span>
-              <router-link to="">关于科博场馆建设与发展的几点建议</router-link>
-            </li>
-            <li>
-              <span class="right-blue-triangle"></span>
-              <router-link to="">关于科博场馆建设与发展的几点建议</router-link>
-            </li>
-            <li>
-              <span class="right-blue-triangle"></span>
-              <router-link to="">关于科博场馆建设与发展的几点建议</router-link>
+              <router-link to="">{{item.title}}</router-link>
             </li>
           </ul>
         </div>
@@ -283,17 +274,33 @@
   import ITopSwiper from '@/base/iTopSwiper'
   import IArticleSwiper from '@/base/iArticleSwiper'
   import IScienceSwiper from '@/base/iScienceSwiper'
+  import {getIndexMiddleInfo} from '@/public/js/api'
 
   export default {
     name: "index",
-    components:{
+    components: {
       ITopSwiper,
       IArticleSwiper,
       IScienceSwiper
     },
     data() {
       return {
-
+        middleInfo: {}
+      }
+    },
+    created() {
+      this._getIndexMiddleInfo()
+    },
+    methods: {
+      /**
+       * 获取首页中部数据
+       * @returns {Promise<void>}
+       * @private
+       */
+      _getIndexMiddleInfo: async function () {
+        let result = await getIndexMiddleInfo()
+        this.middleInfo = result.msg
+        console.log(result)
       }
     }
   }
@@ -401,7 +408,7 @@
     }
     .floor-two {
       margin-top: 20px;
-      .lists{
+      .lists {
         margin-top: 20px;
         .thumbnail {
           .img {
@@ -423,7 +430,7 @@
               white-space: nowrap;
               margin-bottom: 5px;
             }
-            .intr-txt{
+            .intr-txt {
               font-size: 14px;
               color: #d1d1d1;
               line-height: 26px;
@@ -431,14 +438,14 @@
             }
           }
         }
-        .list{
+        .list {
           margin-top: 18px;
-          li{
+          li {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
             margin-bottom: 10px;
-            .txt{
+            .txt {
               float: left;
               .right-blue-triangle {
                 width: 0;
@@ -462,7 +469,7 @@
                 white-space: nowrap;
               }
             }
-            .date{
+            .date {
               font-size: 14px;
               color: #999;
               float: right;
@@ -480,25 +487,25 @@
         width: 570px;
       }
     }
-    .banner{
+    .banner {
       width: 1200px;
       margin: 40px 0 20px -20px;
-      img{
+      img {
         width: 100%;
       }
     }
-    .floor-three{
-      .member,.system{
+    .floor-three {
+      .member, .system {
         width: 570px;
         float: left;
-        .list{
+        .list {
           margin-top: 15px;
-          li{
+          li {
             overflow: hidden;
             margin-bottom: 10px;
-            .txt{
+            .txt {
               float: left;
-              .grad{
+              .grad {
                 width: 68px;
                 height: 24px;
                 font-size: 10px;
@@ -510,22 +517,22 @@
                 vertical-align: middle;
                 margin-right: 5px;
               }
-              .grad-green{
+              .grad-green {
                 background-image: linear-gradient(-225deg, #00D0FB 0%, #00ACF6 100%);
               }
-              .grad-blue{
+              .grad-blue {
                 background-image: linear-gradient(-225deg, #00B09B 0%, #96C93D 100%);
               }
-              .grad-origin{
+              .grad-origin {
                 background-image: linear-gradient(-235deg, #FF8960 16%, #FF62A5 100%);
               }
-              .grad-originred{
+              .grad-originred {
                 background-image: linear-gradient(-235deg, #FF8960 16%, #FF62A5 100%);
               }
-              .grad-red{
+              .grad-red {
                 background-image: linear-gradient(-225deg, #F657B7 0%, #E92C81 100%);
               }
-              a{
+              a {
                 font-size: 14px;
                 color: #333;
                 line-height: 34px;
@@ -533,14 +540,14 @@
                 vertical-align: middle;
               }
             }
-            .date{
+            .date {
               float: right;
               line-height: 34px;
             }
           }
         }
       }
-      .system{
+      .system {
         float: right;
       }
     }

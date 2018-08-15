@@ -1,17 +1,9 @@
 <template>
   <div class="top-swiper">
     <swiper :options="swiperOption">
-      <swiper-slide>
-        <a target="_blank" href="#" class="bg-img"
-           style="background: url('./static/img/test/surmon-1.jpg') no-repeat center"></a>
-      </swiper-slide>
-      <swiper-slide>
-        <a target="_blank" href="#" class="bg-img"
-           style="background: url('./static/img/test/surmon-1.jpg') no-repeat center"></a>
-      </swiper-slide>
-      <swiper-slide>
-        <a target="_blank" href="#" class="bg-img"
-           style="background: url('./static/img/test/surmon-1.jpg') no-repeat center"></a>
+      <swiper-slide v-for="(item,index) in data" :key="index">
+        <a target="_blank" :href="item.url" class="bg-img"
+           :style="{background: 'url('+item.img+') no-repeat center'}"></a>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -24,6 +16,12 @@
 
   export default {
     name: "iTopSwiper",
+    props: {
+      data: {
+        type: Array,
+        default: []
+      }
+    },
     components: {
       swiper,
       swiperSlide
@@ -54,7 +52,7 @@
     height: 424px;
     float: left;
     position: relative;
-    .swiper-container{
+    .swiper-container {
       height: 100%;
     }
     .swiper-slide {

@@ -1,7 +1,7 @@
 <template>
   <div class="head">
     <div class="logo">
-      <img src="../assets/logo.png"/>
+      <img :src="logo"/>
     </div>
     <div class="menu">
       <ul class="menu-list clearfix">
@@ -41,6 +41,12 @@
 <script>
   export default {
     name: "iHead",
+    props: {
+      logo: {
+        type: String,
+        default: ''
+      }
+    },
     data() {
       return {
         menu: this.initData()
