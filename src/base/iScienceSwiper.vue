@@ -1,17 +1,9 @@
 <template>
   <div class="science clearfix">
     <swiper :options="options">
-      <swiper-slide>
+      <swiper-slide v-if="banners.length" v-for="(item,index) in banners" :key="index">
         <a target="_blank" href="#" class="bg-img"
-           style="background: url('./static/img/test/surmon-1.jpg') no-repeat center"></a>
-      </swiper-slide>
-      <swiper-slide>
-        <a target="_blank" href="#" class="bg-img"
-           style="background: url('./static/img/test/surmon-2.jpg') no-repeat center"></a>
-      </swiper-slide>
-      <swiper-slide>
-        <a target="_blank" href="#" class="bg-img"
-           style="background: url('./static/img/test/surmon-3.jpg') no-repeat center"></a>
+           :style="{background: 'url('+item.img+') no-repeat center'}"></a>
       </swiper-slide>
     </swiper>
     <p class="next" slot="button-next">
@@ -20,8 +12,8 @@
     <p class="prev" slot="button-prev">
       <Icon type="ios-arrow-back" class="swiper-icon"></Icon>
     </p>
-    <div class="mask">
-      实体场馆基础之上建立的互联网虚拟场馆,大众通过数字科技馆来了解实体场馆
+    <div class="mask" v-if="banners.length">
+      {{tit ? tit : banners[0].title}}
     </div>
   </div>
 </template>
@@ -32,17 +24,29 @@
 
   export default {
     name: "iScienceSwiper",
+    props: {
+      banners: {
+        type: Array,
+        default: []
+      }
+    },
     components: {
       swiper,
       swiperSlide,
     },
     data() {
+      const _this = this
       return {
-        options:{
-          loop: true,
+        tit: '',
+        options: {
           navigation: {
             nextEl: '.next',
             prevEl: '.prev'
+          },
+          on: {
+            slideChange: function () {
+              _this.tit = _this.banners ? _this.banners[this.activeIndex].title : ''
+            }
           }
         }
       }
@@ -55,23 +59,23 @@
     margin: 40px 80px 0 80px;
     position: relative;
     height: 400px;
-    .swiper-container{
+    .swiper-container {
       height: 100%;
       width: 800px;
-      .bg-img{
+      .bg-img {
         width: 100%;
         height: 100%;
         background-size: cover !important;
         display: block;
       }
     }
-    .next,.prev{
+    .next, .prev {
       width: 40px;
       height: 90px;
       text-align: center;
       line-height: 90px;
       color: #fff;
-      background: rgba(0,0,0,.6);
+      background: rgba(0, 0, 0, .6);
       position: absolute;
       font-size: 30px;
       top: 50%;
@@ -82,14 +86,14 @@
       -moz-border-radius: 4px;
       border-radius: 4px;
       outline: none;
-      &:hover{
+      &:hover {
         background: rgb(65, 207, 253);
       }
     }
-    .prev{
+    .prev {
       left: 0;
     }
-    .mask{
+    .mask {
       width: 800px;
       height: 70px;
       background: rgba(0, 0, 0, 0.6);

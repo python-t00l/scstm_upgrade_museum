@@ -29,7 +29,6 @@
     data() {
       return {
         swiperOption: {
-          centeredSlides: true,
           speed: 400,
           loop: true,
           autoplay: {

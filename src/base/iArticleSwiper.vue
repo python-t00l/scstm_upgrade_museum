@@ -1,67 +1,18 @@
 <template>
   <div class="article clearfix">
-    <div class="banner-img">
+    <div class="banner-img" v-if="banners.length">
       <a target="_blank" href="#" class="bg-img"
-         :style="{background: 'url('+bg+') no-repeat center'}"></a>
+         :style="{background: 'url('+(bg ? bg : banners[0].img)+') no-repeat center'}"></a>
     </div>
     <div class="article-swiper">
       <swiper :options="options">
-        <swiper-slide>
+        <swiper-slide v-for="(item,index) in banners" :key="index">
           <a target="_blank" href="#" class="art-title">
-            论新时代背景下实体科博场馆的发展出路
+            {{item.title}}
           </a>
           <p class="before"></p>
           <div class="art-text">
-            在人类发展历程中，科技推动着人类社会不断进步。互联网时代
-            的到来，科技对人类的影响已超过任何一个年代，科博场馆作为
-            我国普及科学知识的主要场所，对提升国民科学素养和“科教兴国”
-            战略的实施有着深远的意义。
-            本文在对新时代背景进行分析的基础上，指出了实体科博馆在新的
-            时代背景下所面临诸多的挑战。新媒体的发展对实体馆的冲击，加
-            之落后的建设理念和欠科学的机制都在一定程度上制约了实体科博
-            馆的发展。因此，实体馆在今后的发展过程中应通过转变落后
-            本文在对新时代背景进行分析的基础上，指出了实体科博馆在新的
-            时代背景下所面临诸多的挑战。新媒体的发展对实体馆的冲击，加
-            之落后的建设理念和欠科学的机制都在一定程度上制约了实体科博
-            馆的发展。因此，实体馆在今后的发展过程中应通过转变落后
-          </div>
-          <p class="after"></p>
-        </swiper-slide>
-        <swiper-slide>
-          <p class="art-title">
-            论新时代背景下实体科博场馆的发展出路
-          </p>
-          <p class="before"></p>
-          <div class="art-text">
-            在人类发展历程中，科技推动着人类社会不断进步。互联网时代
-            的到来，科技对人类的影响已超过任何一个年代，科博场馆作为
-            我国普及科学知识的主要场所，对提升国民科学素养和“科教兴国”
-            战略的实施有着深远的意义。
-            本文在对新时代背景进行分析的基础上，指出了实体科博馆在新的
-            时代背景下所面临诸多的挑战。新媒体的发展对实体馆的冲击，加
-            之落后的建设理念和欠科学的机制都在一定程度上制约了实体科博
-            馆的发展。因此，实体馆在今后的发展过程中应通过转变落后
-          </div>
-          <p class="after"></p>
-        </swiper-slide>
-        <swiper-slide>
-          <p class="art-title">
-            论新时代背景下实体科博场馆的发展出路
-          </p>
-          <p class="before"></p>
-          <div class="art-text">
-            在人类发展历程中，科技推动着人类社会不断进步。互联网时代
-            的到来，科技对人类的影响已超过任何一个年代，科博场馆作为
-            我国普及科学知识的主要场所，对提升国民科学素养和“科教兴国”
-            战略的实施有着深远的意义。
-            本文在对新时代背景进行分析的基础上，指出了实体科博馆在新的
-            时代背景下所面临诸多的挑战。新媒体的发展对实体馆的冲击，加
-            之落后的建设理念和欠科学的机制都在一定程度上制约了实体科博
-            馆的发展。因此，实体馆在今后的发展过程中应通过转变落后
-            本文在对新时代背景进行分析的基础上，指出了实体科博馆在新的
-            时代背景下所面临诸多的挑战。新媒体的发展对实体馆的冲击，加
-            之落后的建设理念和欠科学的机制都在一定程度上制约了实体科博
-            馆的发展。因此，实体馆在今后的发展过程中应通过转变落后
+            {{item.introduction}}
           </div>
           <p class="after"></p>
         </swiper-slide>
@@ -77,6 +28,12 @@
 
   export default {
     name: "iArticleSwiper",
+    props: {
+      banners: {
+        type: Array,
+        default: []
+      }
+    },
     components: {
       swiper,
       swiperSlide
@@ -84,7 +41,6 @@
     data() {
       const _this = this
       return {
-        banner: ['./static/img/test/surmon-1.jpg', './static/img/test/surmon-2.jpg', './static/img/test/surmon-3.jpg'],
         bg: '',
         options: {
           centeredSlides: true,
@@ -95,14 +51,11 @@
           },
           on: {
             slideChange: function () {
-              _this.bg = _this.banner[this.activeIndex]
+              _this.bg = _this.banners ? _this.banners[this.activeIndex].img : ''
             }
           }
         }
       }
-    },
-    mounted(){
-      this.bg = this.banner[0]
     }
   }
 </script>
@@ -131,7 +84,7 @@
       .swiper-container {
         height: 100%;
       }
-      .swiper-pagination-bullet{
+      .swiper-pagination-bullet {
         width: 12px;
         height: 12px;
       }

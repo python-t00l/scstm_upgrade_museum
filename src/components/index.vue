@@ -44,40 +44,23 @@
           <div class="thumbnail clearfix">
             <router-link to="">
               <div class="img">
-                <img src="../assets/test/test1.png"/>
+                <img :src="middleInfo.dynamic ? middleInfo.dynamic[0].img : ''"/>
               </div>
               <div class="intr">
-                <p class="tit">畅游科技海洋，播撒科学的种子</p>
+                <p class="tit">{{middleInfo.dynamic ? middleInfo.dynamic[0].title : ''}}</p>
                 <p class="intr-txt">
-                  园——航模表演现场会在什邡市马井学校举行。
-                  德阳市科技馆馆长卢春涛，什邡市科协主席朱晓峰、
-                  副主席易佑全，什邡市教育局信息中心主任尹新明等领导莅临指导，
-                  来自全什邡市各兄弟学校的近40名科技。
+                  {{middleInfo.dynamic ? middleInfo.dynamic[0].introduction : ''}}
                 </p>
               </div>
             </router-link>
           </div>
           <ul class="list clearfix">
-            <li>
+            <li v-for="(item,index) in middleInfo.dynamic" :key="index">
               <p class="txt">
                 <span class="right-blue-triangle"></span>
-                <router-link to="">关于科博场馆建设与发展的几点建议</router-link>
+                <router-link to="">{{item.title}}</router-link>
               </p>
-              <p class="date">2018-07-14</p>
-            </li>
-            <li>
-              <p class="txt">
-                <span class="right-blue-triangle"></span>
-                <router-link to="">关于科博场馆建设与发展的几点建议</router-link>
-              </p>
-              <p class="date">2018-07-14</p>
-            </li>
-            <li>
-              <p class="txt">
-                <span class="right-blue-triangle"></span>
-                <router-link to="">关于科博场馆建设与发展的几点建议</router-link>
-              </p>
-              <p class="date">2018-07-14</p>
+              <p class="date">{{item.addtime | formatDate}}</p>
             </li>
           </ul>
         </div>
@@ -96,40 +79,23 @@
           <div class="thumbnail clearfix">
             <router-link to="">
               <div class="img">
-                <img src="../assets/test/test1.png"/>
+                <img :src="middleInfo.party ? middleInfo.party[0].img : ''"/>
               </div>
               <div class="intr">
-                <p class="tit">畅游科技海洋，播撒科学的种子</p>
+                <p class="tit">{{middleInfo.party ? middleInfo.party[0].title : ''}}</p>
                 <p class="intr-txt">
-                  园——航模表演现场会在什邡市马井学校举行。
-                  德阳市科技馆馆长卢春涛，什邡市科协主席朱晓峰、
-                  副主席易佑全，什邡市教育局信息中心主任尹新明等领导莅临指导，
-                  来自全什邡市各兄弟学校的近40名科技。
+                  {{middleInfo.party ? middleInfo.party[0].introduction : ''}}
                 </p>
               </div>
             </router-link>
           </div>
           <ul class="list clearfix">
-            <li>
+            <li v-for="(item,index) in middleInfo.party" :key="index">
               <p class="txt">
                 <span class="right-blue-triangle"></span>
-                <router-link to="">关于科博场馆建设与发展的几点建议</router-link>
+                <router-link to="">{{item.title}}</router-link>
               </p>
-              <p class="date">2018-07-14</p>
-            </li>
-            <li>
-              <p class="txt">
-                <span class="right-blue-triangle"></span>
-                <router-link to="">关于科博场馆建设与发展的几点建议</router-link>
-              </p>
-              <p class="date">2018-07-14</p>
-            </li>
-            <li>
-              <p class="txt">
-                <span class="right-blue-triangle"></span>
-                <router-link to="">关于科博场馆建设与发展的几点建议</router-link>
-              </p>
-              <p class="date">2018-07-14</p>
+              <p class="date">{{item.addtime | formatDate}}</p>
             </li>
           </ul>
         </div>
@@ -149,50 +115,14 @@
           <router-link to=""> 更多></router-link>
         </div>
         <ul class="list clearfix">
-          <li>
+          <li v-for="(item,index) in middleInfo.members" :key="index">
             <div class="txt">
-              <span class="grad grad-green">会员咨询</span>
+              <span class="grad" :class="item.typeid | checkColor">{{item.type}}</span>
               <router-link to="">
-                四川省科博协参加地方自然科学博物馆协会2016年工作会议
+                {{item.title}}
               </router-link>
             </div>
-            <p class="date">2018-07-14</p>
-          </li>
-          <li>
-            <div class="txt">
-              <span class="grad grad-blue">专项活动</span>
-              <router-link to="">
-                四川省科博协参加地方自然科学博物馆协会2016年工作会议
-              </router-link>
-            </div>
-            <p class="date">2018-07-14</p>
-          </li>
-          <li>
-            <div class="txt">
-              <span class="grad grad-origin">我要入会</span>
-              <router-link to="">
-                四川省科博协参加地方自然科学博物馆协会2016年工作会议
-              </router-link>
-            </div>
-            <p class="date">2018-07-14</p>
-          </li>
-          <li>
-            <div class="txt">
-              <span class="grad grad-originred">继续教育</span>
-              <router-link to="">
-                四川省科博协参加地方自然科学博物馆协会2016年工作会议
-              </router-link>
-            </div>
-            <p class="date">2018-07-14</p>
-          </li>
-          <li>
-            <div class="txt">
-              <span class="grad grad-red">赛事纵览</span>
-              <router-link to="">
-                四川省科博协参加地方自然科学博物馆协会2016年工作会议
-              </router-link>
-            </div>
-            <p class="date">2018-07-14</p>
+            <p class="date">{{item.addtime | formatDate}}</p>
           </li>
         </ul>
       </div>
@@ -205,50 +135,14 @@
           <router-link to=""> 更多></router-link>
         </div>
         <ul class="list clearfix">
-          <li>
+          <li v-for="(item,index) in middleInfo.entity" :key="index">
             <div class="txt">
-              <span class="grad grad-green">会员咨询</span>
+              <span class="grad" :class="item.typeid | checkColor">{{item.type}}</span>
               <router-link to="">
-                四川省科博协参加地方自然科学博物馆协会2016年工作会议
+                {{item.title}}
               </router-link>
             </div>
-            <p class="date">2018-07-14</p>
-          </li>
-          <li>
-            <div class="txt">
-              <span class="grad grad-blue">专项活动</span>
-              <router-link to="">
-                四川省科博协参加地方自然科学博物馆协会2016年工作会议
-              </router-link>
-            </div>
-            <p class="date">2018-07-14</p>
-          </li>
-          <li>
-            <div class="txt">
-              <span class="grad grad-origin">我要入会</span>
-              <router-link to="">
-                四川省科博协参加地方自然科学博物馆协会2016年工作会议
-              </router-link>
-            </div>
-            <p class="date">2018-07-14</p>
-          </li>
-          <li>
-            <div class="txt">
-              <span class="grad grad-originred">继续教育</span>
-              <router-link to="">
-                四川省科博协参加地方自然科学博物馆协会2016年工作会议
-              </router-link>
-            </div>
-            <p class="date">2018-07-14</p>
-          </li>
-          <li>
-            <div class="txt">
-              <span class="grad grad-red">赛事纵览</span>
-              <router-link to="">
-                四川省科博协参加地方自然科学博物馆协会2016年工作会议
-              </router-link>
-            </div>
-            <p class="date">2018-07-14</p>
+            <p class="date">{{item.addtime | formatDate}}</p>
           </li>
         </ul>
       </div>
@@ -258,14 +152,14 @@
       <div class="banner">
         <img src="../assets/banner2.jpg"/>
       </div>
-      <i-article-swiper></i-article-swiper>
+      <i-article-swiper :banners="middleInfo.online ? middleInfo.online : []"></i-article-swiper>
     </div>
     <!--POPULAR SCIENCE WINDOW-->
     <div class="window">
       <div class="banner">
         <img src="../assets/banner3.jpg"/>
       </div>
-      <i-science-swiper></i-science-swiper>
+      <i-science-swiper :banners="middleInfo.popular ? middleInfo.popular : []"></i-science-swiper>
     </div>
   </div>
 </template>
@@ -275,6 +169,7 @@
   import IArticleSwiper from '@/base/iArticleSwiper'
   import IScienceSwiper from '@/base/iScienceSwiper'
   import {getIndexMiddleInfo} from '@/public/js/api'
+  import moment from 'moment'
 
   export default {
     name: "index",
@@ -285,11 +180,19 @@
     },
     data() {
       return {
-        middleInfo: {}
+        middleInfo: {},
       }
     },
     created() {
       this._getIndexMiddleInfo()
+    },
+    filters: {
+      formatDate(time) {
+        return moment.unix(time).format('YYYY-MM-DD');
+      },
+      checkColor(typeId) {
+        return typeId == 1 ? 'grad-green' : typeId == 2 ? 'grad-blue' : typeId == 3 ? 'grad-origin' : typeId == 4 ? 'grad-originred' : 'grad-red'
+      }
     },
     methods: {
       /**
@@ -300,7 +203,6 @@
       _getIndexMiddleInfo: async function () {
         let result = await getIndexMiddleInfo()
         this.middleInfo = result.msg
-        console.log(result)
       }
     }
   }
@@ -371,6 +273,10 @@
                 text-align: center;
                 line-height: 40px;
                 color: #fff;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                padding: 0 10px;
               }
             }
           }
