@@ -199,3 +199,23 @@ export function getEntityDetail(param) {
   const result = post('/Home/Entity/data', param)
   return result
 }
+
+/**
+ * 获取流动科技馆列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getFlowLists(param) {
+  const result = post('/Home/Flow/lists', param)
+  return result
+}
+
+/**
+ * 获取流动科技馆详情
+ * @param param
+ * @returns {*}
+ */
+export function getFlowDetail(param) {
+  const result = post('/Home/Flow/data', param)
+  return result
+}

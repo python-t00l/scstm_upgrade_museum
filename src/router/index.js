@@ -16,6 +16,8 @@ import Game from '@/components/member/game'
 import gameDetail from '@/components/member/gameDetail'
 import Entity from '@/components/science/entity'
 import entityDetail from '@/components/science/entityDetail'
+import Flow from '@/components/science/flow'
+import flowDetail from '@/components/science/flowDetail'
 
 Vue.use(Router)
 
@@ -116,6 +118,18 @@ export default new Router({
       name: '实体科技馆详情',
       component: entityDetail,
       meta: ['现代科技馆体系', '实体科技馆']
+    },
+    {
+      path: '/flow',
+      name: '实体科技馆',
+      component: Flow,
+      meta: ['现代科技馆体系', '流动科技馆']
+    },
+    {
+      path: '/flow/:id',
+      name: '流动科技馆详情',
+      component: flowDetail,
+      meta: ['现代科技馆体系', '流动科技馆']
     },
   ]
 })
