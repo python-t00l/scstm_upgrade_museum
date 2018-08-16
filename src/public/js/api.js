@@ -25,7 +25,7 @@ export function getIndexMiddleInfo() {
  * @returns {*}
  */
 export function introduceList(param) {
-  const result = post('/Home/introduce/lists', param)
+  const result = post('/Home/Introduce/lists', param)
   return result
 }
 
@@ -35,7 +35,7 @@ export function introduceList(param) {
  * @returns {*}
  */
 export function introduceDetail(param) {
-  const result = post('/Home/introduce/data', param)
+  const result = post('/Home/Introduce/data', param)
   return result
 }
 
@@ -60,3 +60,22 @@ export function formSubmit(param) {
   return result
 }
 
+/**
+ * 获取协会党建列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getPartyLists(param) {
+  const result = post('/Home/Party/lists', param)
+  return result
+}
+
+/**
+ * 获取协会党建详情
+ * @param param
+ * @returns {*}
+ */
+export function getPartyDetail(param) {
+  const result = post('/Home/Party/data', param)
+  return result
+}

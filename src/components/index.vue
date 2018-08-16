@@ -12,19 +12,18 @@
           <router-link to=""> 更多></router-link>
         </div>
         <div class="notice-list">
-          <div class="thumbnail">
-            <router-link to="">
-              <img :src="middleInfo.notice && middleInfo.notice[0].img"/>
-              <p class="mask">{{middleInfo.notice && middleInfo.notice[0].title}}</p>
-            </router-link>
-          </div>
           <ul class="list">
-            <li
-              v-for="(item,index) in middleInfo.notice"
-              v-if="index!==0"
-              :key="index">
-              <span class="right-blue-triangle"></span>
-              <router-link to="">{{item.title}}</router-link>
+            <li v-for="(item,index) in middleInfo.notice" :key="index">
+              <div class="thumbnail" v-if="item.img">
+                <router-link to="">
+                  <img :src="item.img"/>
+                  <p class="mask">{{item.title}}</p>
+                </router-link>
+              </div>
+              <div v-else>
+                <span class="right-blue-triangle"></span>
+                <router-link to="">{{item.title}}</router-link>
+              </div>
             </li>
           </ul>
         </div>
@@ -41,26 +40,28 @@
           <router-link to=""> 更多></router-link>
         </div>
         <div class="lists">
-          <div class="thumbnail clearfix">
-            <router-link to="">
-              <div class="img">
-                <img :src="middleInfo.dynamic ? middleInfo.dynamic[0].img : ''"/>
-              </div>
-              <div class="intr">
-                <p class="tit">{{middleInfo.dynamic ? middleInfo.dynamic[0].title : ''}}</p>
-                <p class="intr-txt">
-                  {{middleInfo.dynamic ? middleInfo.dynamic[0].introduction : ''}}
-                </p>
-              </div>
-            </router-link>
-          </div>
           <ul class="list clearfix">
             <li v-for="(item,index) in middleInfo.dynamic" :key="index">
-              <p class="txt">
-                <span class="right-blue-triangle"></span>
-                <router-link to="">{{item.title}}</router-link>
-              </p>
-              <p class="date">{{item.addtime | formatDate}}</p>
+              <div class="thumbnail clearfix" v-if="item.img">
+                <router-link to="">
+                  <div class="img">
+                    <img :src="item.img"/>
+                  </div>
+                  <div class="intr">
+                    <p class="tit">{{item.title}}</p>
+                    <p class="intr-txt">
+                      {{item.introduction}}
+                    </p>
+                  </div>
+                </router-link>
+              </div>
+              <div v-else>
+                <p class="txt">
+                  <span class="right-blue-triangle"></span>
+                  <router-link to="">{{item.title}}</router-link>
+                </p>
+                <p class="date">{{item.addtime | formatDate}}</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -76,26 +77,28 @@
           <router-link to=""> 更多></router-link>
         </div>
         <div class="lists">
-          <div class="thumbnail clearfix">
-            <router-link to="">
-              <div class="img">
-                <img :src="middleInfo.party ? middleInfo.party[0].img : ''"/>
-              </div>
-              <div class="intr">
-                <p class="tit">{{middleInfo.party ? middleInfo.party[0].title : ''}}</p>
-                <p class="intr-txt">
-                  {{middleInfo.party ? middleInfo.party[0].introduction : ''}}
-                </p>
-              </div>
-            </router-link>
-          </div>
           <ul class="list clearfix">
             <li v-for="(item,index) in middleInfo.party" :key="index">
-              <p class="txt">
-                <span class="right-blue-triangle"></span>
-                <router-link to="">{{item.title}}</router-link>
-              </p>
-              <p class="date">{{item.addtime | formatDate}}</p>
+              <div class="thumbnail clearfix" v-if="item.img">
+                <router-link to="">
+                  <div class="img">
+                    <img :src="item.img"/>
+                  </div>
+                  <div class="intr">
+                    <p class="tit">{{item.title}}</p>
+                    <p class="intr-txt">
+                      {{item.introduction}}
+                    </p>
+                  </div>
+                </router-link>
+              </div>
+              <div v-else>
+                <p class="txt">
+                  <span class="right-blue-triangle"></span>
+                  <router-link to="">{{item.title}}</router-link>
+                </p>
+                <p class="date">{{item.addtime | formatDate}}</p>
+              </div>
             </li>
           </ul>
         </div>

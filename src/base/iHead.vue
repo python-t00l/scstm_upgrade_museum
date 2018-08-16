@@ -96,7 +96,7 @@
             title: '协会党建',
             isSub: false,
             isShow: false,
-            link: ''
+            link: '/party'
           },
           {
             title: '新闻信息',
