@@ -34,6 +34,7 @@
       font-size: 18px;
       color: #fff;
       text-align: center;
+      text-transform: uppercase;
     }
   }
 </style>

@@ -119,3 +119,23 @@ export function getDynamicDetail(param) {
   const result = post('/Home/Dynamic/data', param)
   return result
 }
+
+/**
+ * 获取会员资讯列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getMessageLists(param) {
+  const result = post('/Home/Members/lists', param)
+  return result
+}
+
+/**
+ * 获取会员资讯详情
+ * @param param
+ * @returns {*}
+ */
+export function getMessageDetail(param) {
+  const result = post('/Home/Members/data', param)
+  return result
+}

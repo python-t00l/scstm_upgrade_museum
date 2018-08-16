@@ -8,6 +8,8 @@ import Notice from '@/components/news/notice'
 import noticeDetail from '@/components/news/noticeDetail'
 import Dynamic from '@/components/news/dynamic'
 import dynamicDetail from '@/components/news/dynamicDetail'
+import Message from '@/components/member/message'
+import messageDetail from '@/components/member/messageDetail'
 
 Vue.use(Router)
 
@@ -60,6 +62,18 @@ export default new Router({
       name: '协会动态详情',
       component: dynamicDetail,
       meta: ['新闻信息', '协会动态']
+    },
+    {
+      path: '/message',
+      name: '会员资讯',
+      component: Message,
+      meta: ['会员天地', '会员资讯']
+    },
+    {
+      path: '/message/:id',
+      name: '会员资讯详情',
+      component: messageDetail,
+      meta: ['会员天地', '会员资讯']
     },
   ]
 })

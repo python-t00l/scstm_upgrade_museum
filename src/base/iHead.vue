@@ -112,7 +112,7 @@
             isSub: true,
             isShow: false,
             items: [
-              {title: '会员资讯', isShow: false, isSub: false, link: ''},
+              {title: '会员资讯', isShow: false, isSub: false, link: '/message'},
               {
                 title: '专项活动',
                 isSub: true,
@@ -132,7 +132,7 @@
                   }
                 ]
               },
-              {title: '我要入会', isShow: false, isSub: false, link: ''}
+              // {title: '我要入会', isShow: false, isSub: false, link: ''}
             ]
           },
           {
