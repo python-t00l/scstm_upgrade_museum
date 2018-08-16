@@ -159,3 +159,23 @@ export function getEducationDetail(param) {
   const result = post('/Home/Activity/data', param)
   return result
 }
+
+/**
+ * 获取赛事纵览列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getGameLists(param) {
+  const result = post('/Home/Game/lists', param)
+  return result
+}
+
+/**
+ * 获取赛事纵览详情
+ * @param param
+ * @returns {*}
+ */
+export function getGameDetail(param) {
+  const result = post('/Home/Game/data', param)
+  return result
+}

@@ -12,6 +12,8 @@ import Message from '@/components/member/message'
 import messageDetail from '@/components/member/messageDetail'
 import Education from '@/components/member/education'
 import educationDetail from '@/components/member/educationDetail'
+import Game from '@/components/member/game'
+import gameDetail from '@/components/member/gameDetail'
 
 Vue.use(Router)
 
@@ -88,6 +90,18 @@ export default new Router({
       name: '继续教育详情',
       component: educationDetail,
       meta: ['会员天地', '继续教育']
+    },
+    {
+      path: '/game',
+      name: '赛事纵览',
+      component: Game,
+      meta: ['会员天地', '赛事纵览']
+    },
+    {
+      path: '/game/:id',
+      name: '赛事纵览详情',
+      component: gameDetail,
+      meta: ['会员天地', '赛事纵览']
     },
   ]
 })
