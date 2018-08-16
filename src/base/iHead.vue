@@ -140,7 +140,7 @@
             isSub: true,
             isShow: false,
             items: [
-              {title: '实体科技馆', isShow: false, isSub: false, link: ""},
+              {title: '实体科技馆', isShow: false, isSub: false, link: "/entity"},
               {title: '流动科技馆', isShow: false, isSub: false, link: ''},
               {title: '科普大篷车', isShow: false, isSub: false, link: ''},
               {title: '数字科技馆', isShow: false, isSub: false, link: ''},

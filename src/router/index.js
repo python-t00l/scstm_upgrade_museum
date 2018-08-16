@@ -14,6 +14,8 @@ import Education from '@/components/member/education'
 import educationDetail from '@/components/member/educationDetail'
 import Game from '@/components/member/game'
 import gameDetail from '@/components/member/gameDetail'
+import Entity from '@/components/science/entity'
+import entityDetail from '@/components/science/entityDetail'
 
 Vue.use(Router)
 
@@ -102,6 +104,18 @@ export default new Router({
       name: '赛事纵览详情',
       component: gameDetail,
       meta: ['会员天地', '赛事纵览']
+    },
+    {
+      path: '/entity',
+      name: '实体科技馆',
+      component: Entity,
+      meta: ['现代科技馆体系', '实体科技馆']
+    },
+    {
+      path: '/entity/:id',
+      name: '实体科技馆详情',
+      component: entityDetail,
+      meta: ['现代科技馆体系', '实体科技馆']
     },
   ]
 })

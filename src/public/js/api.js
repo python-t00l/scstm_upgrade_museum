@@ -179,3 +179,23 @@ export function getGameDetail(param) {
   const result = post('/Home/Game/data', param)
   return result
 }
+
+/**
+ * 获取实体科技馆列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getEntityLists(param) {
+  const result = post('/Home/Entity/lists', param)
+  return result
+}
+
+/**
+ * 获取实体科技馆详情
+ * @param param
+ * @returns {*}
+ */
+export function getEntityDetail(param) {
+  const result = post('/Home/Entity/data', param)
+  return result
+}

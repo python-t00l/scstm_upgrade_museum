@@ -10,7 +10,7 @@
       </p>
     </div>
     <div class="detail-con">
-      <div class="digset">
+      <div class="digset" v-if="data.introduction">
         <p>
           摘要：
           <span>{{data.introduction}}</span>
