@@ -10,6 +10,8 @@ import Dynamic from '@/components/news/dynamic'
 import dynamicDetail from '@/components/news/dynamicDetail'
 import Message from '@/components/member/message'
 import messageDetail from '@/components/member/messageDetail'
+import Education from '@/components/member/education'
+import educationDetail from '@/components/member/educationDetail'
 
 Vue.use(Router)
 
@@ -74,6 +76,18 @@ export default new Router({
       name: '会员资讯详情',
       component: messageDetail,
       meta: ['会员天地', '会员资讯']
+    },
+    {
+      path: '/education',
+      name: '继续教育',
+      component: Education,
+      meta: ['会员天地', '继续教育']
+    },
+    {
+      path: '/education/:id',
+      name: '继续教育详情',
+      component: educationDetail,
+      meta: ['会员天地', '继续教育']
     },
   ]
 })

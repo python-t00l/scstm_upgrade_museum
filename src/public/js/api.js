@@ -139,3 +139,23 @@ export function getMessageDetail(param) {
   const result = post('/Home/Members/data', param)
   return result
 }
+
+/**
+ * 获取继续教育列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getEducationLists(param) {
+  const result = post('/Home/Activity/lists', param)
+  return result
+}
+
+/**
+ * 获取继续教育详情
+ * @param param
+ * @returns {*}
+ */
+export function getEducationDetail(param) {
+  const result = post('/Home/Activity/data', param)
+  return result
+}

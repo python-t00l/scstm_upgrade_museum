@@ -122,13 +122,13 @@
                     title: '继续教育',
                     isSub: false,
                     isShow: false,
-                    link: ''
+                    link: '/education'
                   },
                   {
                     title: '赛事纵览',
                     isSub: false,
                     isShow: false,
-                    link: ''
+                    link: '/game'
                   }
                 ]
               },
