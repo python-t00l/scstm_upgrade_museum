@@ -219,3 +219,23 @@ export function getFlowDetail(param) {
   const result = post('/Home/Flow/data', param)
   return result
 }
+
+/**
+ * 获取科普大篷车列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getScienceLists(param) {
+  const result = post('/Home/Science/lists', param)
+  return result
+}
+
+/**
+ * 获取科普大篷车详情
+ * @param param
+ * @returns {*}
+ */
+export function getScienceDetail(param) {
+  const result = post('/Home/Science/data', param)
+  return result
+}

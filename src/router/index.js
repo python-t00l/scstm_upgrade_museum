@@ -18,6 +18,8 @@ import Entity from '@/components/science/entity'
 import entityDetail from '@/components/science/entityDetail'
 import Flow from '@/components/science/flow'
 import flowDetail from '@/components/science/flowDetail'
+import Science from '@/components/science/science'
+import scienceDetail from '@/components/science/scienceDetail'
 
 Vue.use(Router)
 
@@ -121,7 +123,7 @@ export default new Router({
     },
     {
       path: '/flow',
-      name: '实体科技馆',
+      name: '流动科技馆',
       component: Flow,
       meta: ['现代科技馆体系', '流动科技馆']
     },
@@ -130,6 +132,18 @@ export default new Router({
       name: '流动科技馆详情',
       component: flowDetail,
       meta: ['现代科技馆体系', '流动科技馆']
+    },
+    {
+      path: '/science',
+      name: '科普大篷车',
+      component: Science,
+      meta: ['现代科技馆体系', '科普大篷车']
+    },
+    {
+      path: '/science/:id',
+      name: '科普大篷车',
+      component: scienceDetail,
+      meta: ['现代科技馆体系', '科普大篷车']
     },
   ]
 })
