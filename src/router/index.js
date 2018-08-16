@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '@/components/index'
 import Introduce from '@/components/introduce'
 import Party from '@/components/party/party'
+import partyDetail from '@/components/party/detail'
 
 Vue.use(Router)
 
@@ -25,6 +26,12 @@ export default new Router({
       name: '协会党建',
       component: Party,
       meta: ['协会党建']
+    },
+    {
+      path: '/party/:id',
+      name: '协会党建详情',
+      component: partyDetail,
+      meta: ['协会党建', '协会党建详情']
     }
   ]
 })

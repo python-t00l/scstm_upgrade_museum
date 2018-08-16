@@ -3,7 +3,7 @@
     <div class="main-box clearfix">
       <div class="notice-list">
         <titles :titles="titles"></titles>
-        <ul-group :data="lists ? lists : []" url=""></ul-group>
+        <ul-group :data="lists ? lists : []" url="/party"></ul-group>
         <Pagination
           v-if="lists[0]"
           :total="lists[0].page*10"

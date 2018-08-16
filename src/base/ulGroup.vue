@@ -1,7 +1,7 @@
 <template>
   <ul class="group clearfix">
     <li v-for="(item,index) in data" :key="index">
-      <router-link to="" target="_blank">
+      <router-link :to="url + '/' + item.id">
         {{item.title}}
       </router-link>
       <!--<img src="../assets/new.jpg"/>-->
@@ -37,17 +37,17 @@
 </script>
 
 <style scoped lang="less">
-  ul.group{
+  ul.group {
     padding: 0 30px;
-    li{
+    li {
       font: 14px/38px '微软雅黑';
-      a{
+      a {
         color: #1e1e1e;
       }
-      img{
+      img {
         vertical-align: inherit;
       }
-      span{
+      span {
         float: right;
         margin-right: 10px;
         color: #999;
