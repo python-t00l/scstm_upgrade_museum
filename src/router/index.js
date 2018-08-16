@@ -6,6 +6,8 @@ import Party from '@/components/party/party'
 import partyDetail from '@/components/party/detail'
 import Notice from '@/components/news/notice'
 import noticeDetail from '@/components/news/noticeDetail'
+import Dynamic from '@/components/news/dynamic'
+import dynamicDetail from '@/components/news/dynamicDetail'
 
 Vue.use(Router)
 
@@ -46,6 +48,18 @@ export default new Router({
       name: '通知公告详情',
       component: noticeDetail,
       meta: ['新闻信息', '通知公告']
+    },
+    {
+      path: '/dynamic',
+      name: '协会动态',
+      component: Dynamic,
+      meta: ['新闻信息', '协会动态']
+    },
+    {
+      path: '/dynamic/:id',
+      name: '协会动态详情',
+      component: dynamicDetail,
+      meta: ['新闻信息', '协会动态']
     },
   ]
 })

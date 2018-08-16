@@ -99,3 +99,23 @@ export function getNoticeDetail(param) {
   const result = post('/Home/Notice/data', param)
   return result
 }
+
+/**
+ * 获取协会动态列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getDynamicLists(param) {
+  const result = post('/Home/Dynamic/lists', param)
+  return result
+}
+
+/**
+ * 获取协会动态详情
+ * @param param
+ * @returns {*}
+ */
+export function getDynamicDetail(param) {
+  const result = post('/Home/Dynamic/data', param)
+  return result
+}
