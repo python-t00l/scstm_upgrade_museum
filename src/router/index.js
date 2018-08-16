@@ -22,6 +22,8 @@ import Science from '@/components/science/science'
 import scienceDetail from '@/components/science/scienceDetail'
 import Digital from '@/components/science/digital'
 import digitalDetail from '@/components/science/digitalDetail'
+import Share from '@/components/science/share'
+import shareDetail from '@/components/science/shareDetail'
 
 Vue.use(Router)
 
@@ -155,9 +157,21 @@ export default new Router({
     },
     {
       path: '/digital/:id',
-      name: '科普大篷车',
+      name: '数字科技馆',
       component: digitalDetail,
       meta: ['现代科技馆体系', '数字科技馆']
+    },
+    {
+      path: '/share',
+      name: '共享科技馆',
+      component: Share,
+      meta: ['现代科技馆体系', '共享科技馆']
+    },
+    {
+      path: '/share/:id',
+      name: '共享科技馆',
+      component: shareDetail,
+      meta: ['现代科技馆体系', '共享科技馆']
     },
   ]
 })
