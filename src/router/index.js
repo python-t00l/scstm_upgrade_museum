@@ -4,6 +4,8 @@ import Index from '@/components/index'
 import Introduce from '@/components/introduce'
 import Party from '@/components/party/party'
 import partyDetail from '@/components/party/detail'
+import Notice from '@/components/news/notice'
+import noticeDetail from '@/components/news/noticeDetail'
 
 Vue.use(Router)
 
@@ -32,6 +34,18 @@ export default new Router({
       name: '协会党建详情',
       component: partyDetail,
       meta: ['协会党建', '协会党建详情']
-    }
+    },
+    {
+      path: '/notice',
+      name: '通知公告',
+      component: Notice,
+      meta: ['新闻信息', '通知公告']
+    },
+    {
+      path: '/notice/:id',
+      name: '通知公告详情',
+      component: noticeDetail,
+      meta: ['新闻信息', '通知公告']
+    },
   ]
 })

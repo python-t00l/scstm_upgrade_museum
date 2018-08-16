@@ -79,3 +79,23 @@ export function getPartyDetail(param) {
   const result = post('/Home/Party/data', param)
   return result
 }
+
+/**
+ * 获取通知公告列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getNoticeLists(param) {
+  const result = post('/Home/Notice/lists', param)
+  return result
+}
+
+/**
+ * 获取通知公告详情
+ * @param param
+ * @returns {*}
+ */
+export function getNoticeDetail(param) {
+  const result = post('/Home/Notice/data', param)
+  return result
+}

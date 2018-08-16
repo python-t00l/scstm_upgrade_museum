@@ -103,7 +103,7 @@
             isSub: true,
             isShow: false,
             items: [
-              {title: '通知公告', isShow: false, isSub: false, link: ''},
+              {title: '通知公告', isShow: false, isSub: false, link: '/notice'},
               {title: '协会动态', isShow: false, isSub: false, link: ''}
             ]
           },

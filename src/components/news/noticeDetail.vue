@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import {getPartyDetail} from '@/public/js/api'
+  import {getNoticeDetail} from '@/public/js/api'
   import DetailCon from '@/base/detail'
 
   export default {
@@ -17,11 +17,11 @@
       }
     },
     created() {
-      this._getPartyDetail()
+      this._getNoticeDetail()
     },
     methods: {
-      _getPartyDetail: async function () {
-        let result = await getPartyDetail({
+      _getNoticeDetail: async function () {
+        let result = await getNoticeDetail({
           id: this.$route.params.id
         })
         this.detail = result.msg

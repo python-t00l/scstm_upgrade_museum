@@ -1,6 +1,6 @@
 <template>
   <ul class="group clearfix">
-    <li v-for="(item,index) in data" :key="index">
+    <li class="clearfix" v-for="(item,index) in data" :key="index">
       <router-link :to="url + '/' + item.id">
         {{item.title}}
       </router-link>
@@ -43,6 +43,13 @@
       font: 14px/38px '微软雅黑';
       a {
         color: #1e1e1e;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 80%;
+        display: block;
+        float: left;
+        margin-right: 5px;
       }
       img {
         vertical-align: inherit;

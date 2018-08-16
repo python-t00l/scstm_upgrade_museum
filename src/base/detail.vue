@@ -71,6 +71,7 @@
       .detail_tit {
         font: 24px/39px '微软雅黑';
         color: #1e1e1e;
+        padding: 0 30px;
       }
       .txt-info {
         color: #929292;
