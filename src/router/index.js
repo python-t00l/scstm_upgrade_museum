@@ -20,6 +20,8 @@ import Flow from '@/components/science/flow'
 import flowDetail from '@/components/science/flowDetail'
 import Science from '@/components/science/science'
 import scienceDetail from '@/components/science/scienceDetail'
+import Digital from '@/components/science/digital'
+import digitalDetail from '@/components/science/digitalDetail'
 
 Vue.use(Router)
 
@@ -144,6 +146,18 @@ export default new Router({
       name: '科普大篷车',
       component: scienceDetail,
       meta: ['现代科技馆体系', '科普大篷车']
+    },
+    {
+      path: '/digital',
+      name: '数字科技馆',
+      component: Digital,
+      meta: ['现代科技馆体系', '数字科技馆']
+    },
+    {
+      path: '/digital/:id',
+      name: '科普大篷车',
+      component: digitalDetail,
+      meta: ['现代科技馆体系', '数字科技馆']
     },
   ]
 })

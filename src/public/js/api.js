@@ -239,3 +239,23 @@ export function getScienceDetail(param) {
   const result = post('/Home/Science/data', param)
   return result
 }
+
+/**
+ * 获取数字科技馆列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getDigitalLists(param) {
+  const result = post('/Home/Digital/lists', param)
+  return result
+}
+
+/**
+ * 获取数字科技馆详情
+ * @param param
+ * @returns {*}
+ */
+export function getDigitalDetail(param) {
+  const result = post('/Home/Digital/data', param)
+  return result
+}
