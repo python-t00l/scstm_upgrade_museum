@@ -153,8 +153,8 @@
             isShow: false,
             items: [
               {title: '四川科博场馆', isShow: false, isSub: false, link: '/cobo'},
-              {title: '学术交流', isShow: false, isSub: false, link: ''},
-              {title: '论文及成果', isShow: false, isSub: false, link: ''}
+              {title: '学术交流', isShow: false, isSub: false, link: '/talk'},
+              {title: '论文及成果', isShow: false, isSub: false, link: '/paper'}
             ]
           },
           {

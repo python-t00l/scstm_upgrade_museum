@@ -299,3 +299,23 @@ export function getCoboDetail(param) {
   const result = post('/Home/Online/data', param)
   return result
 }
+
+/**
+ * 获取学术交流列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getTalkLists(param) {
+  const result = post('/Home/Academic/lists', param)
+  return result
+}
+
+/**
+ * 获取学术交流详情
+ * @param param
+ * @returns {*}
+ */
+export function getTalkDetail(param) {
+  const result = post('/Home/Academic/data', param)
+  return result
+}

@@ -26,6 +26,8 @@ import Share from '@/components/science/share'
 import shareDetail from '@/components/science/shareDetail'
 import Cobo from '@/components/academic/cobo'
 import coboDetail from '@/components/academic/coboDetail'
+import Talk from '@/components/academic/talk'
+import talkDetail from '@/components/academic/talkDetail'
 
 Vue.use(Router)
 
@@ -186,6 +188,18 @@ export default new Router({
       name: '四川科博场馆',
       component: coboDetail,
       meta: ['学术苑地', '四川科博场馆']
+    },
+    {
+      path: '/talk',
+      name: '学术交流',
+      component: Talk,
+      meta: ['学术苑地', '学术交流']
+    },
+    {
+      path: '/talk/:id',
+      name: '四川科博场馆',
+      component: talkDetail,
+      meta: ['学术苑地', '学术交流']
     },
   ]
 })
