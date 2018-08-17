@@ -40,7 +40,7 @@
   ul.group {
     padding: 0 30px;
     li {
-      font: 14px/38px '微软雅黑';
+      font: 16px/40px '微软雅黑';
       a {
         color: #1e1e1e;
         overflow: hidden;

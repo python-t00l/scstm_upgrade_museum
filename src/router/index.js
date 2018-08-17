@@ -36,6 +36,7 @@ import Policy from '@/components/create/policy'
 import policyDetail from '@/components/create/policyDetail'
 import Window from '@/components/window/window'
 import windowDetail from '@/components/window/windowDetail'
+import Download from '@/components/download/download'
 
 Vue.use(Router)
 
@@ -257,5 +258,11 @@ export default new Router({
       component: windowDetail,
       meta: ['科创服务']
     },
+    {
+      path:'/download',
+      name:'下载专区',
+      component:Download,
+      meta:['下载专区']
+    }
   ]
 })

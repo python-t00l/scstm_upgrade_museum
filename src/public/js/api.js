@@ -399,3 +399,13 @@ export function getWindowDetail(param) {
   const result = post('/Home/Popular/data', param)
   return result
 }
+
+/**
+ * 获取下载专区列表
+ * @param param
+ * @returns {*}
+ */
+export function getDownloadList(param) {
+  const result = post('/Home/Download/lists', param)
+  return result
+}
