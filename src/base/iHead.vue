@@ -162,7 +162,7 @@
             isSub: true,
             isShow: false,
             items: [
-              {title: '科技创新服务站', isShow: false, isSub: false, link: ''},
+              {title: '科技创新服务站', isShow: false, isSub: false, link: '/innovate'},
               {title: '相关科技政策', isShow: false, isSub: false, link: ''}
             ]
           },

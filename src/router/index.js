@@ -30,6 +30,8 @@ import Talk from '@/components/academic/talk'
 import talkDetail from '@/components/academic/talkDetail'
 import Paper from '@/components/academic/paper'
 import paperDetail from '@/components/academic/paperDetail'
+import Innovate from '@/components/create/innovate'
+import innovateDetail from '@/components/create/innovateDetail'
 
 Vue.use(Router)
 
@@ -214,6 +216,18 @@ export default new Router({
       name: '论文及成果',
       component: paperDetail,
       meta: ['学术苑地', '论文及成果']
+    },
+    {
+      path: '/innovate',
+      name: '科技创新服务站',
+      component: Innovate,
+      meta: ['科创服务', '科技创新服务站']
+    },
+    {
+      path: '/innovate/:id',
+      name: '论文及成果',
+      component: innovateDetail,
+      meta: ['科创服务', '科技创新服务站']
     },
   ]
 })
