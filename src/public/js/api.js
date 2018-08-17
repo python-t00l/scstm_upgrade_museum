@@ -319,3 +319,43 @@ export function getTalkDetail(param) {
   const result = post('/Home/Academic/data', param)
   return result
 }
+
+/**
+ * 获取论文及成果列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getPaperLists(param) {
+  const result = post('/Home/Paper/lists', param)
+  return result
+}
+
+/**
+ * 获取论文及成果详情
+ * @param param
+ * @returns {*}
+ */
+export function getPaperDetail(param) {
+  const result = post('/Home/Paper/data', param)
+  return result
+}
+
+/**
+ * 获取创新服务站列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getInnovateLists(param) {
+  const result = post('/Home/Research/lists', param)
+  return result
+}
+
+/**
+ * 获取创新服务站详情
+ * @param param
+ * @returns {*}
+ */
+export function getInnovateDetail(param) {
+  const result = post('/Home/Research/data', param)
+  return result
+}

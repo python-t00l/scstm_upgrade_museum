@@ -28,6 +28,8 @@ import Cobo from '@/components/academic/cobo'
 import coboDetail from '@/components/academic/coboDetail'
 import Talk from '@/components/academic/talk'
 import talkDetail from '@/components/academic/talkDetail'
+import Paper from '@/components/academic/paper'
+import paperDetail from '@/components/academic/paperDetail'
 
 Vue.use(Router)
 
@@ -200,6 +202,18 @@ export default new Router({
       name: '四川科博场馆',
       component: talkDetail,
       meta: ['学术苑地', '学术交流']
+    },
+    {
+      path: '/paper',
+      name: '论文及成果',
+      component: Paper,
+      meta: ['学术苑地', '论文及成果']
+    },
+    {
+      path: '/paper/:id',
+      name: '论文及成果',
+      component: paperDetail,
+      meta: ['学术苑地', '论文及成果']
     },
   ]
 })
