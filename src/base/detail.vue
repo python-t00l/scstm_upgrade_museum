@@ -60,11 +60,11 @@
     .line {
       width: 100%;
       height: 4px;
-      background: #1b90ed;
+      background: #20a6fc;
       margin-bottom: 29px;
     }
     .detaTit {
-      border-bottom: 1px solid #1b90ed;
+      border-bottom: 1px solid #20a6fc;
       margin-bottom: 24px;
       text-align: center;
       padding-bottom: 20px;

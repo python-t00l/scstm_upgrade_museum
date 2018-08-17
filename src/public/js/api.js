@@ -359,3 +359,23 @@ export function getInnovateDetail(param) {
   const result = post('/Home/Research/data', param)
   return result
 }
+
+/**
+ * 获取相关科技政策列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getPolicyLists(param) {
+  const result = post('/Home/Policy/lists', param)
+  return result
+}
+
+/**
+ * 获取相关科技政策详情
+ * @param param
+ * @returns {*}
+ */
+export function getPolicyDetail(param) {
+  const result = post('/Home/Policy/data', param)
+  return result
+}

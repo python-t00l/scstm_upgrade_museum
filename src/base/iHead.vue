@@ -163,20 +163,20 @@
             isShow: false,
             items: [
               {title: '科技创新服务站', isShow: false, isSub: false, link: '/innovate'},
-              {title: '相关科技政策', isShow: false, isSub: false, link: ''}
+              {title: '相关科技政策', isShow: false, isSub: false, link: '/policy'}
             ]
           },
           {
             title: '科普之窗',
             isSub: false,
             isShow: false,
-            link: ''
+            link: '/window'
           },
           {
             title: '下载专区',
             isSub: false,
             isShow: false,
-            link: ''
+            link: '/download'
           },
         ]
       }

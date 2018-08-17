@@ -32,6 +32,8 @@ import Paper from '@/components/academic/paper'
 import paperDetail from '@/components/academic/paperDetail'
 import Innovate from '@/components/create/innovate'
 import innovateDetail from '@/components/create/innovateDetail'
+import Policy from '@/components/create/policy'
+import policyDetail from '@/components/create/policyDetail'
 
 Vue.use(Router)
 
@@ -228,6 +230,18 @@ export default new Router({
       name: '论文及成果',
       component: innovateDetail,
       meta: ['科创服务', '科技创新服务站']
+    },
+    {
+      path: '/policy',
+      name: '相关科技政策',
+      component: Policy,
+      meta: ['科创服务', '相关科技政策']
+    },
+    {
+      path: '/policy/:id',
+      name: '论文及成果',
+      component: policyDetail,
+      meta: ['科创服务', '相关科技政策']
     },
   ]
 })
