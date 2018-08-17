@@ -51,7 +51,6 @@
           limit: this.limit
         })
         this.lists = result.msg
-        console.log(result)
       },
       handlePage(page) {
         this.page = page

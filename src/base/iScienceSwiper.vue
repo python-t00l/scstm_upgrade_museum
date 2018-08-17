@@ -2,8 +2,8 @@
   <div class="science clearfix">
     <swiper :options="options">
       <swiper-slide v-if="banners.length" v-for="(item,index) in banners" :key="index">
-        <a target="_blank" href="#" class="bg-img"
-           :style="{background: 'url('+item.img+') no-repeat center'}"></a>
+        <router-link :to="'/window/' + item.id" class="bg-img"
+                     :style="{background: 'url('+item.img+') no-repeat center'}"></router-link>
       </swiper-slide>
     </swiper>
     <p class="next" slot="button-next">

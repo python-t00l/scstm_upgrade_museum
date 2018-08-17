@@ -9,20 +9,20 @@
             <span class="ch">通知公告</span>
             <!--<span class="en">NOTICE ANNOUNCEMENT</span>-->
           </p>
-          <router-link to=""> 更多></router-link>
+          <router-link to="/notice"> 更多></router-link>
         </div>
         <div class="notice-list">
           <ul class="list">
             <li v-for="(item,index) in middleInfo.notice" :key="index">
               <div class="thumbnail" v-if="item.img">
-                <router-link to="">
+                <router-link :to="'/notice/' + item.id">
                   <img :src="item.img"/>
                   <p class="mask">{{item.title}}</p>
                 </router-link>
               </div>
               <div v-else>
                 <span class="right-blue-triangle"></span>
-                <router-link to="">{{item.title}}</router-link>
+                <router-link :to="'/notice/' + item.id">{{item.title}}</router-link>
               </div>
             </li>
           </ul>
@@ -37,13 +37,13 @@
             <span class="ch">协会动态</span>
             <span class="en">ASSOCIATION DYNAMICS</span>
           </p>
-          <router-link to=""> 更多></router-link>
+          <router-link to="/dynamic"> 更多></router-link>
         </div>
         <div class="lists">
           <ul class="list clearfix">
             <li v-for="(item,index) in middleInfo.dynamic" :key="index">
               <div class="thumbnail clearfix" v-if="item.img">
-                <router-link to="">
+                <router-link :to="'/dynamic/'+item.id" class="clearfix">
                   <div class="img">
                     <img :src="item.img"/>
                   </div>
@@ -58,7 +58,7 @@
               <div v-else>
                 <p class="txt">
                   <span class="right-blue-triangle"></span>
-                  <router-link to="">{{item.title}}</router-link>
+                  <router-link :to="'/dynamic/'+item.id">{{item.title}}</router-link>
                 </p>
                 <p class="date">{{item.addtime | formatDate}}</p>
               </div>
@@ -74,13 +74,13 @@
             <span class="ch">协会党建</span>
             <span class="en">CULTURE OF PARTY BUILDING</span>
           </p>
-          <router-link to=""> 更多></router-link>
+          <router-link to="/party"> 更多></router-link>
         </div>
         <div class="lists">
           <ul class="list clearfix">
             <li v-for="(item,index) in middleInfo.party" :key="index">
               <div class="thumbnail clearfix" v-if="item.img">
-                <router-link to="">
+                <router-link :to="'/party/'+item.id" class="clearfix">
                   <div class="img">
                     <img :src="item.img"/>
                   </div>
@@ -95,7 +95,7 @@
               <div v-else>
                 <p class="txt">
                   <span class="right-blue-triangle"></span>
-                  <router-link to="">{{item.title}}</router-link>
+                  <router-link :to="'/party/'+item.id">{{item.title}}</router-link>
                 </p>
                 <p class="date">{{item.addtime | formatDate}}</p>
               </div>
@@ -115,13 +115,13 @@
             <span class="ch">会员天地</span>
             <span class="en">MEMBER CLUB</span>
           </p>
-          <router-link to=""> 更多></router-link>
+          <router-link to="/message"> 更多></router-link>
         </div>
         <ul class="list clearfix">
           <li v-for="(item,index) in middleInfo.members" :key="index">
             <div class="txt">
               <span class="grad" :class="item.typeid | checkColor">{{item.type}}</span>
-              <router-link to="">
+              <router-link :to="[item.type, item.id] | linkMemberUrl">
                 {{item.title}}
               </router-link>
             </div>
@@ -135,13 +135,13 @@
             <span class="ch">现代科技馆体系</span>
             <span class="en">TECHNOLOGY MUSEUM SYSTEM</span>
           </p>
-          <router-link to=""> 更多></router-link>
+          <router-link to="/entity"> 更多></router-link>
         </div>
         <ul class="list clearfix">
           <li v-for="(item,index) in middleInfo.entity" :key="index">
             <div class="txt">
               <span class="grad" :class="item.typeid | checkColor">{{item.type}}</span>
-              <router-link to="">
+              <router-link :to="[item.type,item.id] | linkMuseumUrl">
                 {{item.title}}
               </router-link>
             </div>
@@ -195,6 +195,12 @@
       },
       checkColor(typeId) {
         return typeId == 1 ? 'grad-green' : typeId == 2 ? 'grad-blue' : typeId == 3 ? 'grad-origin' : typeId == 4 ? 'grad-originred' : 'grad-red'
+      },
+      linkMemberUrl([name, id]) {
+        return (name === '会员资讯' ? '/message/' : name === '继续教育' ? '/education/' : name === '赛事纵览' ? '/game/' : '') + id
+      },
+      linkMuseumUrl([name, id]) {
+        return (name === '实体科技馆' ? '/entity/' : name === '流动科技馆' ? '/flow/' : name === '科普科技馆' ? '/science/' : name === '数字科技馆' ? '/digital/' : name === '共享科技馆' ? '/share/' : '') + id
       }
     },
     methods: {
@@ -305,6 +311,7 @@
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
+              width: 99%;
             }
           }
         }
@@ -315,6 +322,9 @@
       .lists {
         margin-top: 20px;
         .thumbnail {
+          a {
+            display: block;
+          }
           .img {
             width: 210px;
             float: left;
@@ -339,18 +349,21 @@
               color: #d1d1d1;
               line-height: 26px;
               text-align: justify;
+              height: 104px;
+              overflow: hidden;
             }
           }
         }
         .list {
           margin-top: 18px;
           li {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
             margin-bottom: 10px;
             .txt {
               float: left;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              width: 80%;
               .right-blue-triangle {
                 width: 0;
                 height: 0;
@@ -409,6 +422,10 @@
             margin-bottom: 10px;
             .txt {
               float: left;
+              width: 80%;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
               .grad {
                 width: 68px;
                 height: 24px;

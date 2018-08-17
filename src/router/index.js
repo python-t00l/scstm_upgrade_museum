@@ -46,223 +46,223 @@ export default new Router({
       path: '/',
       name: '首页',
       component: Index,
-      meta: ['学术交流']
+      meta: [0]
     },
     {
       path: '/introduce',
       name: '协会介绍',
       component: Introduce,
-      meta: ['协会介绍']
+      meta: [1]
     },
     {
       path: '/party',
       name: '协会党建',
       component: Party,
-      meta: ['协会党建']
+      meta: [2]
     },
     {
       path: '/party/:id',
       name: '协会党建详情',
       component: partyDetail,
-      meta: ['协会党建', '协会党建详情']
+      meta: [2]
     },
     {
       path: '/notice',
       name: '通知公告',
       component: Notice,
-      meta: ['新闻信息', '通知公告']
+      meta: [3, 0]
     },
     {
       path: '/notice/:id',
       name: '通知公告详情',
       component: noticeDetail,
-      meta: ['新闻信息', '通知公告']
+      meta: [3, 0]
     },
     {
       path: '/dynamic',
       name: '协会动态',
       component: Dynamic,
-      meta: ['新闻信息', '协会动态']
+      meta: [3, 1]
     },
     {
       path: '/dynamic/:id',
       name: '协会动态详情',
       component: dynamicDetail,
-      meta: ['新闻信息', '协会动态']
+      meta: [3, 1]
     },
     {
       path: '/message',
       name: '会员资讯',
       component: Message,
-      meta: ['会员天地', '会员资讯']
+      meta: [4, 0]
     },
     {
       path: '/message/:id',
       name: '会员资讯详情',
       component: messageDetail,
-      meta: ['会员天地', '会员资讯']
+      meta: [4, 0]
     },
     {
       path: '/education',
       name: '继续教育',
       component: Education,
-      meta: ['会员天地', '继续教育']
+      meta: [4, 1, 0]
     },
     {
       path: '/education/:id',
       name: '继续教育详情',
       component: educationDetail,
-      meta: ['会员天地', '继续教育']
+      meta: [4, 1, 0]
     },
     {
       path: '/game',
       name: '赛事纵览',
       component: Game,
-      meta: ['会员天地', '赛事纵览']
+      meta: [4, 1, 1]
     },
     {
       path: '/game/:id',
       name: '赛事纵览详情',
       component: gameDetail,
-      meta: ['会员天地', '赛事纵览']
+      meta: [4, 1, 1]
     },
     {
       path: '/entity',
       name: '实体科技馆',
       component: Entity,
-      meta: ['现代科技馆体系', '实体科技馆']
+      meta: [5, 0]
     },
     {
       path: '/entity/:id',
       name: '实体科技馆详情',
       component: entityDetail,
-      meta: ['现代科技馆体系', '实体科技馆']
+      meta: [5, 0]
     },
     {
       path: '/flow',
       name: '流动科技馆',
       component: Flow,
-      meta: ['现代科技馆体系', '流动科技馆']
+      meta: [5,1]
     },
     {
       path: '/flow/:id',
       name: '流动科技馆详情',
       component: flowDetail,
-      meta: ['现代科技馆体系', '流动科技馆']
+      meta: [5,1]
     },
     {
       path: '/science',
       name: '科普大篷车',
       component: Science,
-      meta: ['现代科技馆体系', '科普大篷车']
+      meta: [5,2]
     },
     {
       path: '/science/:id',
-      name: '科普大篷车',
+      name: '科普大篷车详情',
       component: scienceDetail,
-      meta: ['现代科技馆体系', '科普大篷车']
+      meta: [5,2]
     },
     {
       path: '/digital',
       name: '数字科技馆',
       component: Digital,
-      meta: ['现代科技馆体系', '数字科技馆']
+      meta: [5,3]
     },
     {
       path: '/digital/:id',
-      name: '数字科技馆',
+      name: '数字科技馆详情',
       component: digitalDetail,
-      meta: ['现代科技馆体系', '数字科技馆']
+      meta: [5,3]
     },
     {
       path: '/share',
       name: '共享科技馆',
       component: Share,
-      meta: ['现代科技馆体系', '共享科技馆']
+      meta: [5,4]
     },
     {
       path: '/share/:id',
-      name: '共享科技馆',
+      name: '共享科技馆详情',
       component: shareDetail,
-      meta: ['现代科技馆体系', '共享科技馆']
+      meta: [5,4]
     },
     {
       path: '/cobo',
       name: '四川科博场馆',
       component: Cobo,
-      meta: ['学术苑地', '四川科博场馆']
+      meta: [6,0]
     },
     {
       path: '/cobo/:id',
-      name: '四川科博场馆',
+      name: '四川科博场馆详情',
       component: coboDetail,
-      meta: ['学术苑地', '四川科博场馆']
+      meta: [6,0]
     },
     {
       path: '/talk',
       name: '学术交流',
       component: Talk,
-      meta: ['学术苑地', '学术交流']
+      meta: [6,1]
     },
     {
       path: '/talk/:id',
-      name: '四川科博场馆',
+      name: '学术交流详情',
       component: talkDetail,
-      meta: ['学术苑地', '学术交流']
+      meta: [6,1]
     },
     {
       path: '/paper',
       name: '论文及成果',
       component: Paper,
-      meta: ['学术苑地', '论文及成果']
+      meta: [6,2]
     },
     {
       path: '/paper/:id',
-      name: '论文及成果',
+      name: '论文及成果详情',
       component: paperDetail,
-      meta: ['学术苑地', '论文及成果']
+      meta: [6,2]
     },
     {
       path: '/innovate',
       name: '科技创新服务站',
       component: Innovate,
-      meta: ['科创服务', '科技创新服务站']
+      meta: [7,0]
     },
     {
       path: '/innovate/:id',
-      name: '论文及成果',
+      name: '科技创新服务站详情',
       component: innovateDetail,
-      meta: ['科创服务', '科技创新服务站']
+      meta: [7,0]
     },
     {
       path: '/policy',
       name: '相关科技政策',
       component: Policy,
-      meta: ['科创服务', '相关科技政策']
+      meta: [7,1]
     },
     {
       path: '/policy/:id',
-      name: '相关科技政策',
+      name: '相关科技政策详情',
       component: policyDetail,
-      meta: ['科创服务', '相关科技政策']
+      meta: [7,1]
     },
     {
       path: '/window',
       name: '科普之窗',
       component: Window,
-      meta: ['科普之窗']
+      meta: [8]
     },
     {
       path: '/window/:id',
-      name: '科普之窗',
+      name: '科普之窗详情',
       component: windowDetail,
-      meta: ['科创服务']
+      meta: [8]
     },
     {
-      path:'/download',
-      name:'下载专区',
-      component:Download,
-      meta:['下载专区']
+      path: '/download',
+      name: '下载专区',
+      component: Download,
+      meta: [9]
     }
   ]
 })

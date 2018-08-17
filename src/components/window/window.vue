@@ -34,7 +34,7 @@
       return {
         titles: {
           ch: '科普之窗',
-          en: 'coupe window',
+          en: 'popular science window',
         },
         page: 1,
         limit: 10,

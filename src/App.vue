@@ -25,10 +25,12 @@
     data() {
       return {
         logoFooterInfo: {},
-        pathname:''
+        pathname:[]
       }
     },
     created() {
+      this.pathname = this.$route.meta
+      document.title = this.$route.name + ' - 四川省自然科学博物馆协会'
       this._getLogoFooterInfo()
     },
     methods: {
@@ -44,7 +46,7 @@
     },
     watch: {
       "$route"(to, from) {
-        this.pathname = to.meta[0]
+        this.pathname = to.meta
         document.title = to.name + ' - 四川省自然科学博物馆协会'
       }
     }

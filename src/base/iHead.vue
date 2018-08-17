@@ -7,26 +7,21 @@
       <ul class="menu-list clearfix">
         <li v-for="(item,index) in menu"
             :class="item.isShow ? 'active' : ''"
-            @mouseenter="toggleEnter(item)"
-            @mouseleave="toggleLeave(item)"
             :key="index">
           <router-link :to="item.link ? item.link : ''">{{item.title}}</router-link>
           <span v-show="item.isSub" class="up-triangle"></span>
-          <ul class="sublist" :style="{display:(item.isShow && item.isSub) ? 'block' :'none'}">
+          <ul class="sublist">
             <li
               v-for="(el,index) in item.items"
               :class="el.isShow ? 'active' : ''"
-              @mouseenter="toggleSubOneEnter(item,el)"
               :key="index">
               <router-link :to="el.link ? el.link : ''">{{el.title}}</router-link>
               <span v-show="el.isSub" class="right-triangle"></span>
               <ul class="sublist"
-                  :style="{display:(el.isShow && el.isSub) ? 'block':'none'}"
-                  style="left: 150px; top: 0;">
+                  style="left: 160px; top: 0;">
                 <li
                   v-for="(sub,index) in el.items"
-                  :class="sub.isShow ? 'active' : ''"
-                  @mouseenter="toggleSubOneEnter(el,sub)">
+                  :class="sub.isShow ? 'active' : ''">
                   <router-link :to="sub.link ? sub.link : ''">{{sub.title}}</router-link>
                 </li>
               </ul>
@@ -39,6 +34,8 @@
 </template>
 
 <script>
+  import index from "../router";
+
   export default {
     name: "iHead",
     props: {
@@ -47,7 +44,7 @@
         default: ''
       },
       pathname: {
-        type: String,
+        type: Array,
         default: ''
       },
     },
@@ -56,30 +53,12 @@
         menu: this.initData()
       }
     },
+    created() {
+      this.initData()
+    },
     methods: {
-      toggleEnter(item) {
-        item.isShow = true
-      },
-      toggleLeave(item) {
-        let menu = this.menu
-        for (let i = 0; i < menu.length; i++) {
-          menu[i].isShow = false
-        }
-        this.menu = this.initData()
-      },
-      toggleSubOneEnter(parentEl, el) {
-        for (let i = 0; i < parentEl.items.length; i++) {
-          parentEl.items[i].isShow = false
-        }
-        if (el.isSub) {
-          for (let i = 0; i < el.items.length; i++) {
-            el.items[i].isShow = false
-          }
-        }
-        el.isShow = true
-      },
-      initData() {
-        return [
+      refresh() {
+        this.menu = [
           {
             title: '首页',
             isSub: false,
@@ -90,7 +69,7 @@
             title: '协会介绍',
             isSub: false,
             isShow: false,
-            link:'/introduce'
+            link: '/introduce'
           },
           {
             title: '协会党建',
@@ -179,6 +158,27 @@
             link: '/download'
           },
         ]
+      },
+      initData() {
+        this.refresh()
+        let [indexs, menu] = [this.pathname, this.menu]
+        if (indexs.length >= 1) {
+          menu[indexs[0]].isShow = true
+        }
+        if (indexs.length >= 2) {
+          menu[indexs[0]].items[indexs[1]].isShow = true
+        }
+        if (indexs.length >= 3) {
+          menu[indexs[0]].items[indexs[1]].items[indexs[2]].isShow = true
+        }
+      },
+    },
+    watch: {
+      pathname: {
+        handler(newVal, oldVal) {
+          this.initData()
+        },
+        deep: true
       }
     }
   }
@@ -207,6 +207,46 @@
           cursor: pointer;
           position: relative;
           margin: 0 4px;
+          &:hover {
+            & > a {
+              background: #fff;
+              -webkit-border-radius: 2px;
+              -moz-border-radius: 2px;
+              border-radius: 2px;
+              color: #20A6FC;
+            }
+            .up-triangle {
+              opacity: 1;
+            }
+            > .sublist {
+              display: block;
+              & > li {
+                &:hover {
+                  > a {
+                    color: #fff;
+                    background: rgba(32,166,252,.7);
+                  }
+                  .right-triangle {
+                    border-color: transparent transparent transparent #fff;
+                  }
+                  > .sublist {
+                    display: block;
+                    &>li{
+                      &:hover{
+                        > a {
+                          color: #fff;
+                          background: rgba(32,166,252,.7);
+                        }
+                        .right-triangle {
+                          border-color: transparent transparent transparent #fff;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
           & > a {
             font-size: 16px;
             color: #fff;
@@ -239,13 +279,13 @@
           }
           .sublist {
             position: absolute;
-            padding: 0 10px;
             background: #fff;
             min-width: 160px;
             z-index: 100;
+            display: none;
             li {
               border-bottom: 1px dotted #d1d1d1;
-              padding: 5px 0;
+              padding: 5px 10px;
               min-width: 90px;
               text-align: center;
               position: relative;
@@ -254,7 +294,7 @@
                   &.active {
                     & > a {
                       color: #fff;
-                      background: #20a6fc;
+                      background: #20a6fc !important;
                     }
                     .right-triangle {
                       border-color: transparent transparent transparent #fff;
@@ -269,7 +309,7 @@
                 border-style: solid;
                 border-color: transparent transparent transparent #333; /*透明 透明 透明 灰*/
                 position: absolute;
-                right: 10px;
+                right: 20px;
                 top: 16px;
               }
               &:last-child {
@@ -287,7 +327,7 @@
               &.active {
                 & > a {
                   color: #fff;
-                  background: #20a6fc;
+                  background: #20a6fc !important;
                 }
                 .right-triangle {
                   border-color: transparent transparent transparent #fff;

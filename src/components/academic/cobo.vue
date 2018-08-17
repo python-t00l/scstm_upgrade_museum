@@ -34,7 +34,7 @@
       return {
         titles: {
           ch: '四川科博场馆',
-          en: 'sichuan COBO museum',
+          en: 'sichuan science museum',
         },
         page: 1,
         limit: 10,
