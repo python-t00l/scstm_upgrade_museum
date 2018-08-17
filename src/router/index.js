@@ -24,6 +24,8 @@ import Digital from '@/components/science/digital'
 import digitalDetail from '@/components/science/digitalDetail'
 import Share from '@/components/science/share'
 import shareDetail from '@/components/science/shareDetail'
+import Cobo from '@/components/academic/cobo'
+import coboDetail from '@/components/academic/coboDetail'
 
 Vue.use(Router)
 
@@ -172,6 +174,18 @@ export default new Router({
       name: '共享科技馆',
       component: shareDetail,
       meta: ['现代科技馆体系', '共享科技馆']
+    },
+    {
+      path: '/cobo',
+      name: '四川科博场馆',
+      component: Cobo,
+      meta: ['学术苑地', '四川科博场馆']
+    },
+    {
+      path: '/cobo/:id',
+      name: '四川科博场馆',
+      component: coboDetail,
+      meta: ['学术苑地', '四川科博场馆']
     },
   ]
 })

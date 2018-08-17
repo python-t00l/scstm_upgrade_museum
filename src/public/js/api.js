@@ -279,3 +279,23 @@ export function getShareDetail(param) {
   const result = post('/Home/Share/data', param)
   return result
 }
+
+/**
+ * 获取科博场馆列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getCoboLists(param) {
+  const result = post('/Home/Online/lists', param)
+  return result
+}
+
+/**
+ * 获取科博场馆详情
+ * @param param
+ * @returns {*}
+ */
+export function getCoboDetail(param) {
+  const result = post('/Home/Online/data', param)
+  return result
+}
