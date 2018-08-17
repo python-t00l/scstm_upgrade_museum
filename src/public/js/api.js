@@ -379,3 +379,23 @@ export function getPolicyDetail(param) {
   const result = post('/Home/Policy/data', param)
   return result
 }
+
+/**
+ * 获取科普之窗列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getWindowLists(param) {
+  const result = post('/Home/Popular/lists', param)
+  return result
+}
+
+/**
+ * 获取科普之窗详情
+ * @param param
+ * @returns {*}
+ */
+export function getWindowDetail(param) {
+  const result = post('/Home/Popular/data', param)
+  return result
+}

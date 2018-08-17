@@ -34,6 +34,8 @@ import Innovate from '@/components/create/innovate'
 import innovateDetail from '@/components/create/innovateDetail'
 import Policy from '@/components/create/policy'
 import policyDetail from '@/components/create/policyDetail'
+import Window from '@/components/window/window'
+import windowDetail from '@/components/window/windowDetail'
 
 Vue.use(Router)
 
@@ -239,9 +241,21 @@ export default new Router({
     },
     {
       path: '/policy/:id',
-      name: '论文及成果',
+      name: '相关科技政策',
       component: policyDetail,
       meta: ['科创服务', '相关科技政策']
+    },
+    {
+      path: '/window',
+      name: '科普之窗',
+      component: Window,
+      meta: ['科普之窗']
+    },
+    {
+      path: '/window/:id',
+      name: '科普之窗',
+      component: windowDetail,
+      meta: ['科创服务']
     },
   ]
 })
