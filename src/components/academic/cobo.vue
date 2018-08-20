@@ -22,6 +22,7 @@
   import {
     getCoboLists
   } from '@/public/js/api'
+  import {LIMIT} from '@/public/js/config'
 
   export default {
     name: "digital",
@@ -37,7 +38,7 @@
           en: 'sichuan science museum',
         },
         page: 1,
-        limit: 10,
+        limit: LIMIT,
         lists: []
       }
     },

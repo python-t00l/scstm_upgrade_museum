@@ -19,6 +19,7 @@
   import titles from '@/base/title'
   import ulGroup from '@/base/ulGroup'
   import Pagination from '@/base/pagination'
+  import {LIMIT} from '@/public/js/config'
   import {
     getPartyLists
   } from '@/public/js/api'
@@ -37,7 +38,7 @@
           en: 'CULTURE OF PARTY BUILDING',
         },
         page: 1,
-        limit: 10,
+        limit: LIMIT,
         lists: []
       }
     },

@@ -39,7 +39,7 @@
   import ulGroup from '@/base/ulGroup'
   import Pagination from '@/base/pagination'
   import moment from 'moment'
-  import {serveUrl} from '@/public/js/config'
+  import {serveUrl,LIMIT} from '@/public/js/config'
   import {
     getDownloadList
   } from '@/public/js/api'
@@ -58,7 +58,7 @@
           en: 'Download Center',
         },
         page: 1,
-        limit: 10,
+        limit: LIMIT,
         lists: [],
         filename: serveUrl
       }

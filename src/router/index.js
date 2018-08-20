@@ -41,6 +41,7 @@ import Download from '@/components/download/download'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',

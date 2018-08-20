@@ -30,7 +30,8 @@
       return {
         swiperOption: {
           speed: 400,
-          loop: true,
+          //loop: true,
+          effect : 'fade',
           autoplay: {
             delay: 2500,
             disableOnInteraction: false

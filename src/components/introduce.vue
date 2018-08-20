@@ -10,12 +10,12 @@
           <span class="icon"></span>
           <span class="txt">{{item.title}}</span>
         </li>
-        <li
-          @click="toggleMsg(0)"
-          :class="{active:sideNav.current===0}">
-          <span class="icon"></span>
-          <span class="txt">留言板</span>
-        </li>
+        <!--<li-->
+          <!--@click="toggleMsg(0)"-->
+          <!--:class="{active:sideNav.current===0}">-->
+          <!--<span class="icon"></span>-->
+          <!--<span class="txt">留言板</span>-->
+        <!--</li>-->
       </ul>
     </div>
     <div class="right_content">
