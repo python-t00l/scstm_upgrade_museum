@@ -189,7 +189,7 @@
     width: 1200px;
     margin: 0 auto;
     .logo {
-      width: 376px;
+      width: 420px;
       margin-bottom: 20px;
       img {
         width: 100%;

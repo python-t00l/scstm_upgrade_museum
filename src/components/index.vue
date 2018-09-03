@@ -12,20 +12,48 @@
           <router-link to="/notice"> 更多></router-link>
         </div>
         <div class="notice-list">
-          <ul class="list">
-            <li v-for="(item,index) in middleInfo.notice" :key="index">
-              <div class="thumbnail" v-if="item.img">
-                <router-link :to="'/notice/' + item.id">
-                  <img :src="item.img"/>
-                  <p class="mask">{{item.title}}</p>
-                </router-link>
-              </div>
-              <div v-else>
-                <span class="right-blue-triangle"></span>
-                <router-link :to="'/notice/' + item.id">{{item.title}}</router-link>
-              </div>
-            </li>
-          </ul>
+          <!--<ul class="list">-->
+            <!--<li v-for="(item,index) in middleInfo.notice" :key="index">-->
+              <!--<div class="thumbnail" v-if="item.img">-->
+                <!--<router-link :to="'/notice/' + item.id">-->
+                  <!--<img :src="item.img"/>-->
+                  <!--<p class="mask">{{item.title}}</p>-->
+                <!--</router-link>-->
+              <!--</div>-->
+              <!--<div v-else>-->
+                <!--<span class="right-blue-triangle"></span>-->
+                <!--<router-link :to="'/notice/' + item.id">{{item.title}}</router-link>-->
+              <!--</div>-->
+            <!--</li>-->
+          <!--</ul>-->
+
+
+          <div class="lists">
+            <ul class="list clearfix">
+              <li v-for="(item,index) in middleInfo.notice" :key="index">
+                <div class="thumbnail clearfix" v-if="item.img">
+                  <router-link :to="'/notice/'+item.id" class="clearfix">
+                    <div class="img">
+                      <img :src="item.img"/>
+                    </div>
+                    <div class="intr">
+                      <p class="tit">{{item.title}}</p>
+                      <p class="intr-txt">
+                        {{item.introduction}}
+                      </p>
+                    </div>
+                  </router-link>
+                </div>
+                <div v-else>
+                  <p class="txt">
+                    <span class="right-blue-triangle"></span>
+                    <router-link :to="'/notice/'+item.id">{{item.title}}</router-link>
+                  </p>
+                  <p class="date">{{item.addtime | formatDate}}</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -255,65 +283,143 @@
     .floor-one {
       .notice-box {
         float: right;
-        width: 320px;
+        width: 488px;
         .notice-list {
           margin-top: 20px;
-          .thumbnail {
-            width: 100%;
-            max-height: 214px;
-            overflow: hidden;
-            a {
-              position: relative;
-              display: block;
-              img {
-                width: 100%;
+          .lists {
+            margin-top: 20px;
+            .thumbnail {
+              a {
+                display: block;
               }
-              .mask {
-                width: 100%;
-                height: 40px;
-                background: rgba(0, 0, 0, .7);
-                position: absolute;
-                bottom: 0;
-                text-align: center;
-                line-height: 40px;
-                color: #fff;
+              .img {
+                width: 185px;
+                height: 137px;
+                float: left;
                 overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                padding: 0 10px;
+                img {
+                  width: 100%;
+                }
+              }
+              .intr {
+                float: right;
+                width: 285px;
+                .tit {
+                  font-size: 18px;
+                  color: #333;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  margin-bottom: 5px;
+                }
+                .intr-txt {
+                  font-size: 14px;
+                  color: #d1d1d1;
+                  line-height: 26px;
+                  text-align: justify;
+                  height: 104px;
+                  overflow: hidden;
+                }
+              }
+            }
+            .list {
+              margin-top: 18px;
+              li {
+                margin-bottom: 10px;
+                overflow: hidden;
+                .txt {
+                  float: left;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  width: 80%;
+                  .right-blue-triangle {
+                    width: 0;
+                    height: 0;
+                    border-width: 5px 0 5px 5px;
+                    border-style: solid;
+                    border-color: transparent transparent transparent #20A6FC; /*透明 透明 透明 灰*/
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 5px;
+                  }
+                  a {
+                    font-size: 16px;
+                    color: #333;
+                    line-height: 34px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                  }
+                }
+                .date {
+                  font-size: 14px;
+                  color: #999;
+                  float: right;
+                  line-height: 34px;
+                }
               }
             }
           }
-          .list {
-            margin-top: 15px;
-            li {
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-            }
-            .right-blue-triangle {
-              width: 0;
-              height: 0;
-              border-width: 5px 0 5px 5px;
-              border-style: solid;
-              border-color: transparent transparent transparent #20A6FC; /*透明 透明 透明 灰*/
-              position: relative;
-              display: inline-block;
-              vertical-align: middle;
-              margin-right: 5px;
-            }
-            a {
-              font-size: 16px;
-              color: #333;
-              line-height: 34px;
-              display: inline-block;
-              vertical-align: middle;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-              width: 99%;
-            }
-          }
+          /*.thumbnail {*/
+            /*width: 100%;*/
+            /*max-height: 214px;*/
+            /*overflow: hidden;*/
+            /*a {*/
+              /*position: relative;*/
+              /*display: block;*/
+              /*img {*/
+                /*width: 100%;*/
+              /*}*/
+              /*.mask {*/
+                /*width: 100%;*/
+                /*height: 40px;*/
+                /*background: rgba(0, 0, 0, .7);*/
+                /*position: absolute;*/
+                /*bottom: 0;*/
+                /*text-align: center;*/
+                /*line-height: 40px;*/
+                /*color: #fff;*/
+                /*overflow: hidden;*/
+                /*text-overflow: ellipsis;*/
+                /*white-space: nowrap;*/
+                /*padding: 0 10px;*/
+              /*}*/
+            /*}*/
+          /*}*/
+          /*.list {*/
+            /*margin-top: 15px;*/
+            /*li {*/
+              /*overflow: hidden;*/
+              /*text-overflow: ellipsis;*/
+              /*white-space: nowrap;*/
+            /*}*/
+            /*.right-blue-triangle {*/
+              /*width: 0;*/
+              /*height: 0;*/
+              /*border-width: 5px 0 5px 5px;*/
+              /*border-style: solid;*/
+              /*border-color: transparent transparent transparent #20A6FC; !*透明 透明 透明 灰*!*/
+              /*position: relative;*/
+              /*display: inline-block;*/
+              /*vertical-align: middle;*/
+              /*margin-right: 5px;*/
+            /*}*/
+            /*a {*/
+              /*font-size: 16px;*/
+              /*color: #333;*/
+              /*line-height: 34px;*/
+              /*display: inline-block;*/
+              /*vertical-align: middle;*/
+              /*overflow: hidden;*/
+              /*text-overflow: ellipsis;*/
+              /*white-space: nowrap;*/
+              /*width: 99%;*/
+            /*}*/
+          /*}*/
         }
       }
     }
@@ -326,7 +432,8 @@
             display: block;
           }
           .img {
-            width: 210px;
+            width: 185px;
+            height: 137px;
             float: left;
             overflow: hidden;
             img {
@@ -335,7 +442,7 @@
           }
           .intr {
             float: right;
-            width: 344px;
+            width: 364px;
             .tit {
               font-size: 18px;
               color: #333;
@@ -358,6 +465,7 @@
           margin-top: 18px;
           li {
             margin-bottom: 10px;
+            overflow: hidden;
             .txt {
               float: left;
               overflow: hidden;

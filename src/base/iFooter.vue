@@ -9,7 +9,7 @@
         <div class="links">
           <Dropdown trigger="click" style="margin-left: 20px">
             <div class="link-item">
-              政府网站链接
+              四川科博网站
               <span class="icon">
                 <Icon type="ios-arrow-down"></Icon>
               </span>
@@ -23,7 +23,7 @@
 
           <Dropdown trigger="click" style="margin-left: 20px">
             <div class="link-item">
-              其他网站链接
+              中国科博网站
               <span class="icon">
                 <Icon type="ios-arrow-down"></Icon>
               </span>
@@ -37,7 +37,7 @@
 
           <Dropdown trigger="click" style="margin-left: 20px">
             <div class="link-item">
-              科普网站链接
+              科普网站
               <span class="icon">
                 <Icon type="ios-arrow-down"></Icon>
               </span>
@@ -54,11 +54,9 @@
     <div class="foot-bottom">
       <div class="foot-con">
         <div class="links">
-          <a href="" target="_blank">四川省自然博协</a>
+          <a href="http://sansm.scstm.com/" target="_blank">四川科协</a>
           <a class="line" href="javascript:void(0)">|</a>
           <a href="http://www.scstm.com" target="_blank">四川省科技馆</a>
-          <a class="line" href="javascript:void(0)">|</a>
-          <a href="" target="_blank">四川省博物馆</a>
         </div>
         <p class="gra-line"></p>
         <p class="txt">

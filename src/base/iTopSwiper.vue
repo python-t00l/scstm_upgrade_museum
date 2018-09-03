@@ -48,8 +48,8 @@
 
 <style lang="less">
   .top-swiper {
-    width: 820px;
-    height: 424px;
+    width: 648px;
+    height: 400px;
     float: left;
     position: relative;
     .swiper-container {
