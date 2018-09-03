@@ -14,9 +14,9 @@
         <div class="notice-list">
           <!--<ul class="list">-->
             <!--<li v-for="(item,index) in middleInfo.notice" :key="index">-->
-              <!--<div class="thumbnail" v-if="item.img">-->
+              <!--<div class="thumbnail" v-if="item.images">-->
                 <!--<router-link :to="'/notice/' + item.id">-->
-                  <!--<img :src="item.img"/>-->
+                  <!--<images :src="item.images"/>-->
                   <!--<p class="mask">{{item.title}}</p>-->
                 <!--</router-link>-->
               <!--</div>-->
@@ -371,7 +371,7 @@
             /*a {*/
               /*position: relative;*/
               /*display: block;*/
-              /*img {*/
+              /*images {*/
                 /*width: 100%;*/
               /*}*/
               /*.mask {*/

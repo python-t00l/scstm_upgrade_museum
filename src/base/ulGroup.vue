@@ -4,7 +4,7 @@
       <router-link :to="url + '/' + item.id">
         {{item.title}}
       </router-link>
-      <!--<img src="../assets/new.jpg"/>-->
+      <!--<images src="../assets/new.jpg"/>-->
       <span>{{item.addtime | dateFrm}}</span>
     </li>
   </ul>
