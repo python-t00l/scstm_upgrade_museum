@@ -81,7 +81,7 @@
     background: #eefaff;
     min-height: 100%;
     margin-bottom: -270px;
-    background-image: url("./assets/bg.jpg");
+    background-image: url("assets/bg.jpg");
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100%;
