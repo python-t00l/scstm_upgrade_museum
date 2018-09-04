@@ -299,6 +299,7 @@
                 overflow: hidden;
                 img {
                   width: 100%;
+                  height: 100%;
                 }
               }
               .intr {
@@ -348,7 +349,7 @@
                     font-size: 16px;
                     color: #333;
                     line-height: 34px;
-                    display: inline-block;
+                    //display: inline-block;
                     vertical-align: middle;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -438,6 +439,7 @@
             overflow: hidden;
             img {
               width: 100%;
+              height: 100%;
             }
           }
           .intr {
@@ -487,7 +489,7 @@
                 font-size: 16px;
                 color: #333;
                 line-height: 34px;
-                display: inline-block;
+                //display: inline-block;
                 vertical-align: middle;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -548,18 +550,23 @@
               }
               .grad-green {
                 background-image: linear-gradient(-225deg, #00D0FB 0%, #00ACF6 100%);
+                background-color: #00ACF6;
               }
               .grad-blue {
                 background-image: linear-gradient(-225deg, #00B09B 0%, #96C93D 100%);
+                background-color: #96C93D;
               }
               .grad-origin {
                 background-image: linear-gradient(-235deg, #FF8960 16%, #FF62A5 100%);
+                background-color: #FF62A5;
               }
               .grad-originred {
                 background-image: linear-gradient(-235deg, #FF8960 16%, #FF62A5 100%);
+                background-color: #FF62A5;
               }
               .grad-red {
                 background-image: linear-gradient(-225deg, #F657B7 0%, #E92C81 100%);
+                background-color: #E92C81;
               }
               a {
                 font-size: 14px;

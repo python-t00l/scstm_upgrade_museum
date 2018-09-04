@@ -54,9 +54,9 @@
     <div class="foot-bottom">
       <div class="foot-con">
         <div class="links">
-          <a href="http://sansm.scstm.com/" target="_blank">四川科协</a>
+          <a href="http://www.sckx.org.cn/" target="_blank">四川省科协</a>
           <a class="line" href="javascript:void(0)">|</a>
-          <a href="http://www.scstm.com" target="_blank">四川省科技馆</a>
+          <a href="http://www.scstm.com" target="_blank">四川科技馆</a>
         </div>
         <p class="gra-line"></p>
         <p class="txt">
