@@ -72,7 +72,7 @@
             link: '/introduce'
           },
           {
-            title: '协会党建',
+            title: '党的建设',
             isSub: false,
             isShow: false,
             link: '/party'
@@ -131,6 +131,7 @@
             isSub: true,
             isShow: false,
             items: [
+              {title: '四川科普教育', isShow: false, isSub: false, link: '/edu'},
               {title: '四川科博场馆', isShow: false, isSub: false, link: '/cobo'},
               {title: '学术交流', isShow: false, isSub: false, link: '/talk'},
               {title: '论文及成果', isShow: false, isSub: false, link: '/paper'}

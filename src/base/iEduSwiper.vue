@@ -1,15 +1,9 @@
 <template>
-  <div class="article clearfix">
-    <div class="banner-img" v-if="banners.length">
-      <router-link
-        class="bg-img"
-        :to="'/cobo/'+(bg.id ? bg.id : banners[0].id)"
-        :style="{background: 'url('+(bg.img ? bg.img : banners[0].img)+') no-repeat center'}"></router-link>
-    </div>
+  <div class="edu clearfix">
     <div class="article-swiper">
       <swiper :options="options">
         <swiper-slide v-for="(item,index) in banners" :key="index">
-          <router-link :to="'/cobo/'+item.id" class="art-title">
+          <router-link :to="'/edu/'+item.id" class="art-title">
             {{item.title}}
           </router-link>
           <p class="before"></p>
@@ -21,6 +15,12 @@
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
     </div>
+    <div class="banner-img" v-if="banners.length">
+      <router-link
+        class="bg-img"
+        :to="'/edu/'+(bg.id ? bg.id : banners[0].id)"
+        :style="{background: 'url('+(bg.img ? bg.img : banners[0].img)+') no-repeat center'}"></router-link>
+    </div>
   </div>
 </template>
 
@@ -29,7 +29,7 @@
   import {swiper, swiperSlide} from 'vue-awesome-swiper'
 
   export default {
-    name: "iArticleSwiper",
+    name: "iEduSwiper",
     props: {
       banners: {
         type: Array,
@@ -63,7 +63,7 @@
 </script>
 
 <style lang="less">
-  .article {
+  .edu {
     box-sizing: border-box;
     width: 100%;
     .banner-img {

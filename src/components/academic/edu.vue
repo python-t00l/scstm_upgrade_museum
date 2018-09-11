@@ -3,7 +3,7 @@
     <div class="main-box clearfix">
       <div class="notice-list">
         <titles :titles="titles"></titles>
-        <ul-group :data="lists ? lists : []" url="/party"></ul-group>
+        <ul-group :data="lists ? lists : []" url="/edu"></ul-group>
         <Pagination
           v-if="lists[0]"
           :total="lists[0].page*10"
@@ -19,13 +19,13 @@
   import titles from '@/base/title'
   import ulGroup from '@/base/ulGroup'
   import Pagination from '@/base/pagination'
-  import {LIMIT} from '@/public/js/config'
   import {
-    getPartyLists
+    getEduLists
   } from '@/public/js/api'
+  import {LIMIT} from '@/public/js/config'
 
   export default {
-    name: "party",
+    name: "digital",
     components: {
       titles,
       ulGroup,
@@ -34,8 +34,8 @@
     data() {
       return {
         titles: {
-          ch: '党的建设',
-          en: 'the Party building',
+          ch: '四川科普教育',
+          en: 'sichuan Popular Science Education',
         },
         page: 1,
         limit: LIMIT,
@@ -43,11 +43,11 @@
       }
     },
     created() {
-      this._getPartyList()
+      this._getEduLists()
     },
     methods: {
-      _getPartyList: async function () {
-        let result = await getPartyLists({
+      _getEduLists: async function () {
+        let result = await getEduLists({
           page: this.page,
           limit: this.limit
         })
@@ -55,7 +55,7 @@
       },
       handlePage(page) {
         this.page = page
-        this._getPartyList()
+        this._getEduLists()
       }
     }
   }

@@ -178,16 +178,23 @@
         </ul>
       </div>
     </div>
-    <!--四川科博场馆-->
-    <div class="museum">
+    <!--四川科博场馆、四川科普教育-->
+    <div class="museum clearfix">
       <div class="banner">
         <img src="../assets/banner2.jpg"/>
       </div>
-      <i-article-swiper :banners="middleInfo.online ? middleInfo.online : []"></i-article-swiper>
+      <!--四川科博场馆-->
+      <div class="museum-box" v-if="middleInfo.online ? middleInfo.online.length : ''">
+        <i-article-swiper :banners="middleInfo.online ? middleInfo.online : []"></i-article-swiper>
+      </div>
+      <!--四川科普教育-->
+      <div class="museum-edu" v-if="middleInfo.fair ? middleInfo.fair.length : ''">
+        <i-edu-swiper :banners="middleInfo.fair ? middleInfo.fair : []"></i-edu-swiper>
+      </div>
     </div>
     <!--POPULAR SCIENCE WINDOW-->
     <div class="window">
-      <div class="banner">
+      <div class="banner" style="margin-top: 70px">
         <img src="../assets/banner3.jpg"/>
       </div>
       <i-science-swiper :banners="middleInfo.popular ? middleInfo.popular : []"></i-science-swiper>
@@ -198,6 +205,7 @@
 <script>
   import ITopSwiper from '@/base/iTopSwiper'
   import IArticleSwiper from '@/base/iArticleSwiper'
+  import IEduSwiper from '@/base/iEduSwiper'
   import IScienceSwiper from '@/base/iScienceSwiper'
   import {getIndexMiddleInfo} from '@/public/js/api'
   import moment from 'moment'
@@ -207,7 +215,8 @@
     components: {
       ITopSwiper,
       IArticleSwiper,
-      IScienceSwiper
+      IScienceSwiper,
+      IEduSwiper
     },
     data() {
       return {
@@ -561,8 +570,8 @@
                 background-color: #FF62A5;
               }
               .grad-originred {
-                background-image: linear-gradient(-235deg, #FF8960 16%, #FF62A5 100%);
-                background-color: #FF62A5;
+                background-image: linear-gradient(-235deg, #673AB7 16%, #F44336 100%);
+                background-color: #F44336;
               }
               .grad-red {
                 background-image: linear-gradient(-225deg, #F657B7 0%, #E92C81 100%);
@@ -584,6 +593,16 @@
         }
       }
       .system {
+        float: right;
+      }
+    }
+    .museum{
+      .museum-box{
+        width: 570px;
+        float: left;
+      }
+      .museum-edu{
+        width: 570px;
         float: right;
       }
     }

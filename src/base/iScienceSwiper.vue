@@ -56,7 +56,7 @@
 
 <style lang="less">
   .science {
-    margin: 40px 80px 0 80px;
+    margin: 20px 80px 0 80px;
     position: relative;
     height: 400px;
     .swiper-container {

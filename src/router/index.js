@@ -26,6 +26,8 @@ import Share from '@/components/science/share'
 import shareDetail from '@/components/science/shareDetail'
 import Cobo from '@/components/academic/cobo'
 import coboDetail from '@/components/academic/coboDetail'
+import Edu from '@/components/academic/edu'
+import eduDetail from '@/components/academic/eduDetail'
 import Talk from '@/components/academic/talk'
 import talkDetail from '@/components/academic/talkDetail'
 import Paper from '@/components/academic/paper'
@@ -188,40 +190,52 @@ export default new Router({
       meta: [5,4]
     },
     {
+      path: '/edu',
+      name: '四川科普教育',
+      component: Edu,
+      meta: [6,0]
+    },
+    {
+      path: '/edu/:id',
+      name: '四川科普教育详情',
+      component: eduDetail,
+      meta: [6,0]
+    },
+    {
       path: '/cobo',
       name: '四川科博场馆',
       component: Cobo,
-      meta: [6,0]
+      meta: [6,1]
     },
     {
       path: '/cobo/:id',
       name: '四川科博场馆详情',
       component: coboDetail,
-      meta: [6,0]
+      meta: [6,1]
     },
     {
       path: '/talk',
       name: '学术交流',
       component: Talk,
-      meta: [6,1]
+      meta: [6,2]
     },
     {
       path: '/talk/:id',
       name: '学术交流详情',
       component: talkDetail,
-      meta: [6,1]
+      meta: [6,2]
     },
     {
       path: '/paper',
       name: '论文及成果',
       component: Paper,
-      meta: [6,2]
+      meta: [6,3]
     },
     {
       path: '/paper/:id',
       name: '论文及成果详情',
       component: paperDetail,
-      meta: [6,2]
+      meta: [6,3]
     },
     {
       path: '/innovate',

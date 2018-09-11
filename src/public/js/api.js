@@ -301,6 +301,26 @@ export function getCoboDetail(param) {
 }
 
 /**
+ * 获取科普教育列表数据
+ * @param param  参数列表
+ * @returns {*}
+ */
+export function getEduLists(param) {
+  const result = post('/Home/Fair/lists', param)
+  return result
+}
+
+/**
+ * 获取科普教育详情
+ * @param param
+ * @returns {*}
+ */
+export function getEduDetail(param) {
+  const result = post('/Home/Fair/data', param)
+  return result
+}
+
+/**
  * 获取学术交流列表数据
  * @param param  参数列表
  * @returns {*}
