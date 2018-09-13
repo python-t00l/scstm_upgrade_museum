@@ -183,13 +183,13 @@
       <div class="banner">
         <img src="../assets/banner2.jpg"/>
       </div>
-      <!--四川科博场馆-->
-      <div class="museum-box" v-if="middleInfo.online ? middleInfo.online.length : ''">
-        <i-article-swiper :banners="middleInfo.online ? middleInfo.online : []"></i-article-swiper>
-      </div>
       <!--四川科普教育-->
-      <div class="museum-edu" v-if="middleInfo.fair ? middleInfo.fair.length : ''">
-        <i-edu-swiper :banners="middleInfo.fair ? middleInfo.fair : []"></i-edu-swiper>
+      <div class="museum-edu" v-if="middleInfo.online ? middleInfo.online.length : ''">
+        <i-edu-swiper :banners="middleInfo.online ? middleInfo.online : []"></i-edu-swiper>
+      </div>
+      <!--四川科博场馆-->
+      <div class="museum-box" v-if="middleInfo.fair ? middleInfo.fair.length : ''">
+        <i-article-swiper :banners="middleInfo.fair ? middleInfo.fair : []"></i-article-swiper>
       </div>
     </div>
     <!--POPULAR SCIENCE WINDOW-->
@@ -599,11 +599,11 @@
     .museum{
       .museum-box{
         width: 570px;
-        float: left;
+        float: right;
       }
       .museum-edu{
         width: 570px;
-        float: right;
+        float: left;
       }
     }
   }

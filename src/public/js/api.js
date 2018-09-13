@@ -286,7 +286,7 @@ export function getShareDetail(param) {
  * @returns {*}
  */
 export function getCoboLists(param) {
-  const result = post('/Home/Online/lists', param)
+  const result = post('/Home/Fair/lists', param)
   return result
 }
 
@@ -296,7 +296,7 @@ export function getCoboLists(param) {
  * @returns {*}
  */
 export function getCoboDetail(param) {
-  const result = post('/Home/Online/data', param)
+  const result = post('/Home/Fair/data', param)
   return result
 }
 
@@ -306,7 +306,7 @@ export function getCoboDetail(param) {
  * @returns {*}
  */
 export function getEduLists(param) {
-  const result = post('/Home/Fair/lists', param)
+  const result = post('/Home/Online/lists', param)
   return result
 }
 
@@ -316,7 +316,7 @@ export function getEduLists(param) {
  * @returns {*}
  */
 export function getEduDetail(param) {
-  const result = post('/Home/Fair/data', param)
+  const result = post('/Home/Online/data', param)
   return result
 }
 

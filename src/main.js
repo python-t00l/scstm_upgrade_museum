@@ -12,7 +12,7 @@ Vue.config.productionTip = false
 
 Vue.prototype.$http = axios
 
-//axios.defaults.withCredentials=true;
+axios.defaults.withCredentials=true;
 
 Vue.use(iView);
 promise.polyfill()
