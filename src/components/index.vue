@@ -99,8 +99,8 @@
         <div class="title clearfix">
           <p>
             <img class="ico" src="../assets/party.png"/>
-            <span class="ch">协会党建</span>
-            <span class="en">CULTURE OF PARTY BUILDING</span>
+            <span class="ch">党的建设</span>
+            <span class="en">THE PARTY BUILDING</span>
           </p>
           <router-link to="/party"> 更多></router-link>
         </div>

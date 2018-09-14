@@ -84,7 +84,7 @@
     background-image: url("assets/bg.jpg");
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 130%;
     box-sizing: border-box;
     padding-top: 20px;
   }
