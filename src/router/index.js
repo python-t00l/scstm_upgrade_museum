@@ -157,13 +157,13 @@ export default new Router({
       path: '/science',
       name: '科普大篷车',
       component: Science,
-      meta: [5,2]
+      meta: [5,4]
     },
     {
       path: '/science/:id',
       name: '科普大篷车详情',
       component: scienceDetail,
-      meta: [5,2]
+      meta: [5,4]
     },
     {
       path: '/digital',
@@ -179,15 +179,15 @@ export default new Router({
     },
     {
       path: '/share',
-      name: '共享科技馆',
+      name: '农村中学科技馆',
       component: Share,
-      meta: [5,4]
+      meta: [5,2]
     },
     {
       path: '/share/:id',
-      name: '共享科技馆详情',
+      name: '农村中学科技馆详情',
       component: shareDetail,
-      meta: [5,4]
+      meta: [5,2]
     },
     {
       path: '/edu',

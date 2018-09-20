@@ -237,7 +237,7 @@
         return (name === '会员资讯' ? '/message/' : name === '继续教育' ? '/education/' : name === '赛事纵览' ? '/game/' : '') + id
       },
       linkMuseumUrl([name, id]) {
-        return (name === '实体科技馆' ? '/entity/' : name === '流动科技馆' ? '/flow/' : name === '科普科技馆' ? '/science/' : name === '数字科技馆' ? '/digital/' : name === '共享科技馆' ? '/share/' : '') + id
+        return (name === '实体科技馆' ? '/entity/' : name === '流动科技馆' ? '/flow/' : name === '科普科技馆' ? '/science/' : name === '数字科技馆' ? '/digital/' : name === '农村中学科技馆' ? '/share/' : '') + id
       }
     },
     methods: {
@@ -546,7 +546,7 @@
               text-overflow: ellipsis;
               white-space: nowrap;
               .grad {
-                width: 68px;
+                padding: 0 5px;
                 height: 24px;
                 font-size: 10px;
                 color: #fff;

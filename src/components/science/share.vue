@@ -34,8 +34,8 @@
     data() {
       return {
         titles: {
-          ch: '共享科技馆',
-          en: 'share science museum',
+          ch: '农村中学科技馆',
+          en: 'country middle school museum',
         },
         page: 1,
         limit: LIMIT,

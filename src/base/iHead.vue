@@ -121,9 +121,9 @@
             items: [
               {title: '实体科技馆', isShow: false, isSub: false, link: "/entity"},
               {title: '流动科技馆', isShow: false, isSub: false, link: '/flow'},
-              {title: '科普大篷车', isShow: false, isSub: false, link: '/science'},
+              {title: '农村中学科技馆', isShow: false, isSub: false, link: '/share'},
               {title: '数字科技馆', isShow: false, isSub: false, link: '/digital'},
-              {title: '共享科技馆', isShow: false, isSub: false, link: '/share'}
+              {title: '科普大篷车', isShow: false, isSub: false, link: '/science'}
             ]
           },
           {
