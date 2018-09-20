@@ -542,9 +542,6 @@
             .txt {
               float: left;
               width: 80%;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
               .grad {
                 padding: 0 5px;
                 height: 24px;
@@ -583,6 +580,10 @@
                 line-height: 34px;
                 display: inline-block;
                 vertical-align: middle;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 84%;
               }
             }
             .date {
@@ -594,6 +595,16 @@
       }
       .system {
         float: right;
+        .list{
+          li{
+            .txt{
+              width: 87%;
+            }
+            .txt a{
+              width: 77%;
+            }
+          }
+        }
       }
     }
     .museum{

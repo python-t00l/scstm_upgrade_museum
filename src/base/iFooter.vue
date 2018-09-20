@@ -54,13 +54,13 @@
     <div class="foot-bottom">
       <div class="foot-con">
         <div class="links">
-          <a href="http://www.sckx.org.cn/" target="_blank">四川省自然科学博物馆协会</a>
+          <a href="http://www.sckx.org.cn/" target="_blank">四川省科学技术协会</a>
           <a class="line" href="javascript:void(0)">|</a>
           <a href="http://www.scstm.com" target="_blank">四川科技馆</a>
         </div>
         <p class="gra-line"></p>
         <p class="txt">
-          四川省自然科学博物馆协会 版权所有 2008-2018 四川省自然科学博物馆协会主办<br/>
+          四川省自然科学博物馆协会 版权所有 2008-2028 四川省自然科学博物馆协会主办<br/>
           地址:{{data.end ? data.end[0].valus : ''}} 电话：{{data.end ? data.end[1].valus : ''}} 传真：{{data.end ? data.end[2].valus : ''}}<br/>
           技术支持：成都匹体科技有限公司<br/>
           蜀ICP备：060202226号
